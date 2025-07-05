@@ -2,8 +2,6 @@
 
 A modern, responsive portfolio website showcasing my work as a Data Scientist and Machine Learning Engineer.
 
-## 🚀 Live Demo
-[View Portfolio](https://yourusername.github.io/portfolio)
 
 ## 🛠️ Technologies Used
 - **Frontend:** HTML5, CSS3, JavaScript
@@ -19,23 +17,6 @@ A modern, responsive portfolio website showcasing my work as a Data Scientist an
 - Smooth scrolling navigation
 - Modern animations and transitions
 
-## 🔧 Local Development
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/portfolio.git
-cd portfolio
-```
-
-2. Open with live server or serve locally
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve .
-```
-
-3. Open `http://localhost:8000` in your browser
 
 ## 📂 Project Structure
 ```
