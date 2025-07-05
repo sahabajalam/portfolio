@@ -57,13 +57,7 @@ portfolio/
     └── ...
 ```
 
-## 📞 Contact
-- **Email:** your-email@example.com
-- **LinkedIn:** [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- **GitHub:** [Your GitHub](https://github.com/yourusername)
 
-## 📄 License
-MIT License - feel free to use this project as inspiration for your own portfolio!
 
 ---
 Built with ❤️ and lots of ☕
