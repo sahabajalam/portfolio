@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahabaj Alam - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Modular CSS Files -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/sections/home.css">
+    <link rel="stylesheet" href="styles/sections/about.css">
+    <link rel="stylesheet" href="styles/sections/projects.css">
+    <link rel="stylesheet" href="styles/sections/blog.css">
+    <link rel="stylesheet" href="styles/sections/certifications.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <div id="home-container"></div>
+    <div id="about-container"></div>
+    <div id="projects-container"></div>
+    <div id="blog-container"></div>
+    <div id="certifications-container"></div>
+    <div id="footer-container"></div>
+
+    <!-- JavaScript Modules -->
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/content.js"></script>
+    <script>
+        // Dynamically load each section from the sections folder
+        const sections = [
+            { id: 'navbar-container', file: 'sections/navbar.html', callback: () => { new Navigation(); } },
+            { id: 'home-container', file: 'sections/home.html' },
+            { id: 'about-container', file: 'sections/about.html' },
+            { id: 'projects-container', file: 'sections/projects.html' },
+            { id: 'blog-container', file: 'sections/blog.html' },
+            { id: 'certifications-container', file: 'sections/certifications.html' },
+            { id: 'footer-container', file: 'sections/footer.html' }
+        ];
+        sections.forEach(section => {
+            fetch(section.file)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById(section.id).innerHTML = html;
+                    if (section.callback) section.callback();
+                });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,352 @@
+/* Apple-Style About Section */
+#about {
+    background: var(--bg-black);
+}
+
+#about .about-text {
+    text-align: center;
+    margin-bottom: clamp(0.4rem, 1.2vh, 0.8rem);
+    max-width: 80%;
+}
+
+#about .typing-text {
+    font-size: clamp(0.95rem, 2.3vw, 1.5rem);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    border-right: 2px solid var(--primary-green);
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word;
+    white-space: normal;
+    min-height: 1.5em;
+}
+
+/* About Cards Grid using base.css classes */
+#about .cards-row-grid {
+    margin-top: clamp(1rem, 3vh, 2rem);
+    max-height: 60vh;
+    padding: clamp(0.6rem, 1.2vh, 1rem);
+    gap: clamp(1rem, 2.2vw, 1.8rem);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Education Component - Modern Card Design */
+.education-timeline {
+    padding: clamp(0.8rem, 1.5vh, 1.2rem);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 1.5vh, 1.2rem);
+}
+
+.education-item {
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid rgba(89, 227, 160, 0.2);
+    border-radius: 16px;
+    padding: clamp(1.5rem, 3vh, 2rem);
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+}
+
+.education-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(89, 227, 160, 0.4);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(89, 227, 160, 0.15);
+}
+
+.education-content {
+    position: relative;
+    z-index: 2;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: clamp(1rem, 2vh, 1.5rem);
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.education-institution {
+    flex: 1;
+}
+
+.education-school {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-weight: 700;
+    color: var(--primary-green);
+    line-height: 1.2;
+    margin-bottom: clamp(0.3rem, 0.6vh, 0.4rem);
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+.education-school::before {
+    content: '�️';
+    font-size: 1.3em;
+    opacity: 0.8;
+}
+
+.education-location {
+    font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+    color: var(--text-light-gray);
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.education-duration {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: clamp(0.2rem, 0.4vh, 0.3rem);
+}
+
+.education-date {
+    font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+    font-weight: 600;
+    color: var(--text-white);
+    background: linear-gradient(135deg, var(--primary-green), #22c55e);
+    padding: clamp(0.4rem, 0.8vh, 0.6rem) clamp(0.8rem, 1.5vw, 1.2rem);
+    border-radius: 25px;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(89, 227, 160, 0.3);
+}
+
+.education-status {
+    font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+    color: var(--primary-green);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.education-details {
+    margin-bottom: 0;
+}
+
+.education-degree {
+    font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+    font-weight: 800;
+    color: var(--text-white);
+    line-height: 1.3;
+    margin-bottom: clamp(0.5rem, 1vh, 0.8rem);
+    letter-spacing: 0.01em;
+}
+
+.education-field {
+    font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+    color: var(--text-secondary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Staggered animation */
+.education-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.education-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.education-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Skill List Component */
+.skill-list {
+    padding: clamp(0.5rem, 1vh, 1rem) clamp(1rem, 2vw, 1.5rem);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.3rem, 0.8vh, 0.6rem);
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.8rem);
+    padding: clamp(0.3rem, 0.8vh, 0.6rem) 0;
+    color: var(--text-light-gray);
+    font-size: clamp(0.8rem, 1.4vw, 1rem);
+    transition: var(--transition-smooth);
+}
+
+.skill-item:hover {
+    color: var(--primary-green);
+    transform: translateX(5px);
+}
+
+.skill-item i {
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    color: var(--primary-green);
+    width: clamp(1.2rem, 2vw, 1.5rem);
+    text-align: center;
+}
+
+/* Responsive Design for About */
+@media (max-width: 1440px) and (max-height: 900px) {
+
+    /* Laptop screens optimization */
+    #about .about-text {
+        margin-bottom: clamp(0.3rem, 1vh, 0.6rem);
+        max-width: 85%;
+    }
+
+    #about .typing-text {
+        font-size: clamp(0.9rem, 2.1vw, 1.35rem);
+        line-height: 1.4;
+    }
+
+    #about .cards-row-grid {
+        margin-top: clamp(0.8rem, 2.5vh, 1.5rem);
+        max-height: 55vh;
+        padding: clamp(0.4rem, 1vh, 0.8rem);
+        gap: clamp(0.8rem, 2vw, 1.5rem);
+    }
+
+    .compact-card {
+        min-height: clamp(320px, 35vh, 400px);
+        max-height: clamp(400px, 45vh, 500px);
+    }
+}
+
+/* Specific optimization for standard laptop screens */
+@media (max-width: 1366px) and (max-height: 768px) {
+    #about .about-text {
+        margin-bottom: clamp(0.2rem, 0.8vh, 0.5rem);
+        max-width: 90%;
+    }
+
+    #about .typing-text {
+        font-size: clamp(0.85rem, 1.9vw, 1.2rem);
+        line-height: 1.35;
+    }
+
+    #about .cards-row-grid {
+        margin-top: clamp(0.6rem, 2vh, 1.2rem);
+        max-height: 50vh;
+        padding: clamp(0.3rem, 0.8vh, 0.6rem);
+        gap: clamp(0.6rem, 1.5vw, 1.2rem);
+    }
+
+    .compact-card {
+        min-height: clamp(280px, 32vh, 360px);
+        max-height: clamp(360px, 40vh, 450px);
+    }
+}
+
+@media (max-width: 1024px) {
+    #about .cards-row-grid {
+        gap: clamp(0.8rem, 2vw, 1.5rem);
+        padding: clamp(0.5rem, 1vh, 0.8rem);
+    }
+}
+
+@media (max-width: 900px) {
+    #about .cards-row-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #about .about-text {
+        max-width: 95%;
+    }
+
+    #about .cards-row-grid {
+        grid-template-columns: 1fr;
+        gap: clamp(1rem, 2vh, 1.5rem);
+        max-height: none;
+    }
+
+    .compact-card {
+        min-height: clamp(300px, 35vh, 400px);
+        max-height: clamp(400px, 45vh, 500px);
+    }
+
+    .education-item {
+        padding: clamp(1.2rem, 2.5vh, 1.5rem);
+    }
+
+    .education-header {
+        flex-direction: column;
+        gap: clamp(0.8rem, 1.5vh, 1rem);
+        align-items: stretch;
+    }
+
+    .education-duration {
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .education-school {
+        font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    }
+
+    .education-location {
+        font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+    }
+
+    .education-date {
+        font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+        padding: clamp(0.3rem, 0.6vh, 0.4rem) clamp(0.6rem, 1.2vw, 0.8rem);
+    }
+
+    .education-degree {
+        font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+    }
+
+    .education-field {
+        font-size: clamp(0.85rem, 2vw, 0.95rem);
+    }
+
+    .education-timeline {
+        padding: clamp(0.6rem, 1.2vh, 0.8rem);
+        gap: clamp(0.8rem, 1.5vh, 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    #about .cards-row-grid {
+        padding: clamp(0.3rem, 0.8vh, 0.5rem);
+    }
+}
+
+@media (max-height: 700px) {
+    .education-item {
+        padding: clamp(1rem, 2vh, 1.2rem);
+    }
+
+    .skill-item {
+        padding: clamp(0.2rem, 0.5vh, 0.4rem) 0;
+    }
+
+    .education-timeline {
+        gap: clamp(0.6rem, 1.2vh, 0.8rem);
+        padding: clamp(0.6rem, 1.2vh, 0.8rem);
+    }
+
+    .education-header {
+        margin-bottom: clamp(0.8rem, 1.5vh, 1rem);
+    }
+}
