@@ -1490,6 +1490,46 @@ html {
     box-shadow: 0 12px 25px rgba(0, 185, 107, 0.2), 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Make navbar CTA use the same primary gradient look but smaller */
+.navbar-cta-button.btn-primary,
+.navbar-cta-button.btn-primary i,
+.navbar-cta-button.btn-primary span {
+    /* inherit colors from btn-primary */
+    color: inherit;
+}
+
+.navbar-cta-button.btn-primary {
+    padding: 0.45rem 0.9rem;
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 185, 107, 0.18);
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.navbar-cta-button.btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0, 185, 107, 0.28);
+}
+
+/* Hero-centered CTAs should use slightly larger padding but same style */
+.hero-cta {
+    padding: 0.95rem 1.6rem;
+    border-radius: 12px;
+}
+
+/* Project demo buttons: same gradient but compact */
+.project-demo {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+}
+
+.project-demo i {
+    /* keep icon spacing */
+    margin-right: 0.5rem;
+}
+
 /* ===== CHAT INTERFACE STYLES ===== */
 .chat-container {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 25px rgba(0, 0, 0, 0.1);
