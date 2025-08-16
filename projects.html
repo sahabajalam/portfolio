@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sahabaj Alam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d'
+                        },
+                        secondary: {
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
+        }
+
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #16a34a, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tech-tag {
+            transition: all 0.2s ease;
+        }
+
+        .tech-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #16a34a, #2563eb);
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg sticky top-0 z-50 border-b border-gray-200/50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html"
+                    class="flex items-center gap-3 text-gray-900 hover:text-primary-600 transition-colors">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-arrow-left text-white"></i>
+                    </div>
+                    <span class="font-semibold">Back to Home</span>
+                </a>
+
+                <div class="flex items-center gap-3 text-gray-900">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center"
+                        aria-hidden="true">
+                        <i class="fas fa-code text-white"></i>
+                    </div>
+                    <!-- Name removed per request to keep header minimal -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-4">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-2">
+                Featured <span class="gradient-text">Projects</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Explore my collection of machine learning, AI, and data science projects that solve real-world problems
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-4 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Featured Project -->
+                <div class="lg:col-span-2 project-card bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-xl"
+                    data-category="ai-ml">
+                    <div class="relative h-64 bg-gradient-to-br from-purple-600/20 to-blue-600/20">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
+                            alt="AI project overview" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute top-6 left-6">
+                            <span
+                                class="bg-green-400 text-green-900 px-3 py-1 rounded-full text-xs font-bold">FEATURED</span>
+                        </div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white font-bold text-2xl mb-2">AI-Powered Document Analysis System</h3>
+                            <p class="text-gray-300 text-sm">Advanced multi-modal AI system for intelligent document
+                                processing, extraction, and analysis using transformers and OCR technology</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Transformers</span>
+                            <span
+                                class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">OCR</span>
+                            <span
+                                class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">FastAPI</span>
+                            <span
+                                class="tech-tag bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">React</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-3">
+                                <button
+                                    class="flex-1 bg-white text-gray-900 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                                </button>
+                                <button
+                                    class="px-4 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-colors">
+                                    <i class="fab fa-github text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-400 text-sm">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 1 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                    data-category="nlp">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 relative">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=1200&q=80"
+                            alt="NLP project preview" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-bold text-lg mb-1">Intelligent Chatbot</h3>
+                            <p class="text-blue-100 text-sm">GPT-powered conversational AI with context awareness</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">GPT-4</span>
+                            <span
+                                class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">LangChain</span>
+                            <span
+                                class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Streamlit</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:scale-105 transition-transform">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                <i class="fab fa-github text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                    data-category="computer-vision">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 relative">
+                        <img src="https://images.unsplash.com/photo-1505765056114-1b36f3ef8c3b?auto=format&fit=crop&w=1200&q=80"
+                            alt="Computer vision preview" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-bold text-lg mb-1">Object Detection System</h3>
+                            <p class="text-green-100 text-sm">Real-time object detection using YOLO and OpenCV</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">YOLO</span>
+                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">OpenCV</span>
+                            <span
+                                class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">PyTorch</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:scale-105 transition-transform">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                <i class="fab fa-github text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                    data-category="data-science">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 relative">
+                        <img src="https://images.unsplash.com/photo-1526378725478-2f3f92d8d289?auto=format&fit=crop&w=1200&q=80"
+                            alt="Data science visualization" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-bold text-lg mb-1">Climate Data Predictor</h3>
+                            <p class="text-purple-100 text-sm">ML model for environmental sustainability forecasting</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">XGBoost</span>
+                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Pandas</span>
+                            <span class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Plotly</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:scale-105 transition-transform">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                <i class="fab fa-github text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                    data-category="web-app">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 relative">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+                            alt="Web app UI" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-bold text-lg mb-1">Stock Price Analyzer</h3>
+                            <p class="text-red-100 text-sm">Real-time stock analysis with ML predictions</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Flask</span>
+                            <span class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">LSTM</span>
+                            <span
+                                class="tech-tag bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Chart.js</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:scale-105 transition-transform">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                <i class="fab fa-github text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                    data-category="ai-ml">
+                    <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 relative">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+                            alt="AI model visualization" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-bold text-lg mb-1">Recommendation Engine</h3>
+                            <p class="text-cyan-100 text-sm">Collaborative filtering for personalized recommendations
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">TensorFlow</span>
+                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Keras</span>
+                            <span class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Docker</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:scale-105 transition-transform">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                <i class="fab fa-github text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                    data-category="nlp">
+                    <div class="h-48 bg-gradient-to-br from-emerald-500 to-green-600 relative">
+                        <img src="https://images.unsplash.com/photo-1526326762325-8c3a1f0a4b5b?auto=format&fit=crop&w=1200&q=80"
+                            alt="NLP dataset" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-bold text-lg mb-1">Sentiment Analyzer</h3>
+                            <p class="text-emerald-100 text-sm">Social media sentiment analysis with BERT</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">BERT</span>
+                            <span
+                                class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Transformers</span>
+                            <span
+                                class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">FastAPI</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:scale-105 transition-transform">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                <i class="fab fa-github text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 7 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                    data-category="data-science">
+                    <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 relative">
+                        <img src="https://images.unsplash.com/photo-1508385082359-f1b8ff5a3d6f?auto=format&fit=crop&w=1200&q=80"
+                            alt="Data analysis" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white font-bold text-lg mb-1">Sales Forecasting Dashboard</h3>
+                            <p class="text-yellow-100 text-sm">Time series analysis for retail sales prediction</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Prophet</span>
+                            <span
+                                class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Streamlit</span>
+                            <span class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Plotly</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:scale-105 transition-transform">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                <i class="fab fa-github text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View All Projects Button -->
+                <div class="col-span-full flex justify-center">
+                    <a href="https://github.com/sahabajalam" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg hover:scale-105 transition-transform">
+                        <i class="fab fa-github text-lg"></i>
+                        View All Projects on GitHub
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg border border-gray-100 p-8 relative overflow-hidden">
+                    <!-- Decorative elements -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500">
+                    </div>
+                    <div class="absolute -top-2 -left-2 w-4 h-4 bg-primary-500 rounded-full opacity-20"></div>
+                    <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-secondary-500 rounded-full opacity-20"></div>
+
+                    <blockquote class="text-2xl md:text-3xl font-light text-gray-800 mb-6 leading-relaxed italic">
+                        "All I want in life is good food and eight hours of peaceful sleep, everything else follows from
+                        that."
+                    </blockquote>
+
+                    <div class="flex items-center justify-center gap-3">
+                        <div class="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
+                        <span class="text-sm font-semibold text-gray-600 tracking-wider uppercase">Life
+                            Philosophy</span>
+                        <div class="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section class="py-8 bg-gradient-to-br from-slate-900 via-slate-800 to-green-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Contact Me
+            </h2>
+            <p class="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
+                Let's collaborate on your next project. I'm always excited to work on innovative solutions.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-6">
+                <a href="https://x.com/sahabaj_alam"
+                    class="social-link bg-black text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
+                    target="_blank">
+                    <i class="fab fa-x-twitter mr-2"></i>Twitter
+                </a>
+                <a href="https://www.linkedin.com/in/sahabajalam/"
+                    class="social-link bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
+                    target="_blank">
+                    <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
+                </a>
+                <a href="https://github.com/sahabajalam"
+                    class="social-link bg-gray-800 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
+                    target="_blank">
+                    <i class="fab fa-github mr-2"></i>GitHub
+                </a>
+                <a href="https://medium.com/@sahabaj1101"
+                    class="social-link bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
+                    target="_blank">
+                    <i class="fab fa-medium mr-2"></i>Medium
+                </a>
+            </div>
+
+            <div class="border-t border-white/10 pt-6">
+                <p class="text-gray-400 text-sm">
+                    © 2025 Sahabaj Alam. Proudly built with
+                    <a href="https://claude.ai" target="_blank" rel="noopener noreferrer"
+                        class="text-white hover:text-green-400 transition-colors underline">Claude</a>
+                    &
+                    <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer"
+                        class="text-white hover:text-green-400 transition-colors underline">GitHub Copilot</a>
+                    <span class="text-red-400">❤️</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease-in-out';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Add CSS animation for fade in
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
