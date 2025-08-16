@@ -143,19 +143,19 @@ class ChatInterface {
         this.responses = {
             experience: {
                 user: "Tell me about your experience",
-                bot: "I have 5+ years of experience in data science and ML engineering. I've worked on 50+ projects including predictive analytics, computer vision, and NLP solutions. I hold multiple certifications from AWS, Google Cloud, and Microsoft Azure."
+                bot: "I'm a junior data scientist with about 1 year of hands-on experience working on predictive modeling, data cleaning, and exploratory analysis. I've completed several projects and internships where I built prototypes, ran experiments, and produced model evaluation reports."
             },
             skills: {
                 user: "What are your key skills?",
-                bot: "My core skills include Python, TensorFlow, PyTorch, scikit-learn, SQL, Docker, Kubernetes, AWS, and MLOps. I specialize in end-to-end ML pipeline development, from data preprocessing to model deployment in production."
+                bot: "Core skills: Python, pandas, scikit-learn, basic TensorFlow/PyTorch, SQL, and Git. Familiar with feature engineering, model evaluation, and containerization using Docker. Currently learning MLOps and cloud deployment practices."
             },
             projects: {
                 user: "Show me some of your projects",
-                bot: "Here are some highlights: 🎯 AI-Powered Document Analysis (featured project), 👁️ Computer Vision System for object detection, 💬 NLP Sentiment Analyzer for social media, and 📊 Real-time recommendation engine. Check out my full projects page for detailed information!"
+                bot: "Selected projects: � Customer Churn Prediction (capstone), � Transfer-learning Image Classifier, 📊 Time-series Forecasting demo, and several exploratory notebooks. See the Projects page for notebooks and code samples."
             },
             contact: {
                 user: "How can I contact you?",
-                bot: "Great! You can reach me at: 📧 sahabajalam@yahoo.com, 💼 LinkedIn: https://www.linkedin.com/in/sahabajalam/, or 📱 schedule a call through my calendar. I'm always open to discussing new opportunities!"
+                bot: "You can reach out at 📧 sahabajalam@yahoo.com or via LinkedIn: https://www.linkedin.com/in/sahabajalam/. I'm open to mentorship, internships, and entry-level roles."
             }
         };
 
@@ -266,7 +266,7 @@ class ChatInterface {
             // Simulate response
             setTimeout(() => {
                 if (typingMsg) typingMsg.remove();
-                this.addMessage("Thanks for your question! In a real implementation, this would be powered by AI to provide detailed answers about my experience and qualifications. Feel free to try the quick action buttons above! 😊", false);
+                this.addMessage("Thanks for your question! I'm a junior data scientist — I can answer basic questions about my projects and skills. Try the quick action buttons above or ask for notebooks and code examples. 😊", false);
             }, 2000);
         }
     }
@@ -274,9 +274,9 @@ class ChatInterface {
     addWelcomeMessage() {
         setTimeout(() => {
             if (this.chatMessages) {
-                this.addMessage("💡 Try clicking the quick action buttons above or type your own question!", false);
+                this.addMessage("💡 I'm a junior data scientist – try the quick action buttons to see sample projects, skills, or contact info.", false);
             }
-        }, 1000);
+        }, 800);
     }
 }
 
