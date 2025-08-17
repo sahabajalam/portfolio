@@ -2301,11 +2301,11 @@ html {
 
     /* Hide social links and contact button on mobile */
     .navbar-social {
-        display: none;
+        display: none !important;
     }
 
     .navbar-cta-button {
-        display: none;
+        display: none !important;
     }
 
     .navbar-mobile-menu-toggle.active .navbar-hamburger-line:nth-child(1) {
@@ -2318,6 +2318,17 @@ html {
 
     .navbar-mobile-menu-toggle.active .navbar-hamburger-line:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* Additional mobile breakpoint for very small screens */
+@media (max-width: 480px) {
+    .navbar-social {
+        display: none !important;
+    }
+
+    .navbar-cta-button {
+        display: none !important;
     }
 }
 
