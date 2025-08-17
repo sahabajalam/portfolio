@@ -7,7 +7,9 @@
     <title>Articles - Sahabaj Alam</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -28,7 +30,8 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif']
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'Georgia', 'serif']
                     }
                 }
             }
@@ -40,12 +43,25 @@
             background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
         }
 
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+        }
+
         .blog-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             backdrop-filter: blur(10px);
         }
 
         .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
@@ -69,387 +85,503 @@
             color: #6b7280;
             font-size: 0.875rem;
         }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand {
+            grid-column: span 2;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-logo-icon {
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, #00b96b 0%, #0088cc 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-link {
+            width: 2rem;
+            height: 2rem;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-social-link:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+        }
+
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            text-align: center;
+        }
+
+        .footer-credit {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color: #d1d5db;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .footer-link {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .back-to-top {
+            background: none;
+            border: none;
+            color: #e5e7eb;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 640px) {
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            .footer-brand {
+                grid-column: span 1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
 <body class="bg-gray-50 font-sans">
-    <!-- Header -->
-    <header class="gradient-bg sticky top-0 z-50 border-b border-gray-200/50 backdrop-blur-lg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html"
-                    class="flex items-center gap-3 text-gray-900 hover:text-primary-600 transition-colors">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-arrow-left text-white"></i>
-                    </div>
-                    <span class="font-semibold">Back to Home</span>
-                </a>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    </style>
+    </head>
 
-                <div class="flex items-center gap-3 text-gray-900">
+    <body class="bg-gray-50 font-sans">
+        <!-- Header -->
+        <header class="gradient-bg sticky top-0 z-50 border-b border-gray-200/50 backdrop-blur-lg">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <a href="index.html"
+                        class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 font-semibold">
+                        Home
+                    </a>
+
+                    <div class="hidden md:flex items-center gap-8">
+                        <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Machine
+                            Learning</a>
+                        <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">AI
+                            Research</a>
+                        <a href="#"
+                            class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Tutorials</a>
+                        <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Industry
+                            Insights</a>
+                    </div>
+
                     <div
                         class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-code text-white"></i>
+                        <i class="fas fa-newspaper text-white"></i>
                     </div>
-                    <span class="text-xl font-bold gradient-text">Sahabaj Alam</span>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Hero Section -->
-    <section id="articles" class="gradient-bg py-4">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-2">
-                My <span class="gradient-text">Articles</span>
-            </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Insights on machine learning, AI development, and data science best practices
-            </p>
-        </div>
-    </section>
+        <!-- Hero Section -->
+        <section class="hero-gradient py-2 relative overflow-hidden">
+            <div class="absolute inset-0 bg-white/20"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="font-serif text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        Exploring the Future of <span class="gradient-text">Artificial Intelligence</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                        Deep insights into machine learning, AI research, and the technologies shaping tomorrow's world.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Blog Grid -->
-    <section class="py-4 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Featured Article -->
+        <section class="py-8 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-1 h-8 bg-gradient-to-b from-primary-600 to-secondary-600 rounded-full"></div>
+                    <h2 class="text-2xl font-bold text-gray-900">Featured Article</h2>
+                </div>
 
-                <!-- Featured Blog Post -->
-                <div
-                    class="lg:col-span-2 blog-card bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-xl">
-                    <div class="relative h-64 bg-gradient-to-br from-purple-600/20 to-blue-600/20">
-                        <div class="absolute top-6 left-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="flex items-center gap-3 mb-4">
                             <span
-                                class="bg-red-400 text-red-900 px-3 py-1 rounded-full text-xs font-bold">FEATURED</span>
+                                class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">Featured</span>
+                            <span
+                                class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">Research</span>
                         </div>
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span
-                                    class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">Research</span>
-                                <span class="text-gray-300 text-sm">•</span>
-                                <span class="text-gray-300 text-sm">12 min read</span>
-                                <span class="text-gray-300 text-sm">•</span>
-                                <span class="text-gray-300 text-sm">Dec 15, 2024</span>
+                        <h3 class="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                            The Rise of Multimodal AI: Transforming Machine Perception
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Exploring how AI systems are learning to understand text, images, and audio simultaneously,
+                            and the breakthrough applications this enables in modern technology.
+                        </p>
+                        <div class="flex items-center gap-4 mb-6 text-sm text-gray-500">
+                            <div class="flex items-center gap-2">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face&auto=format"
+                                    alt="Author" class="w-6 h-6 rounded-full">
+                                <span>Sahabaj Alam</span>
                             </div>
-                            <h3 class="text-white font-bold text-2xl mb-2">The Rise of Multimodal AI: Transforming How
-                                Machines Understand Our World</h3>
-                            <p class="text-gray-300 text-sm">Exploring how AI systems are learning to understand text,
-                                images, and audio simultaneously, and the breakthrough applications this enables in
-                                modern technology.</p>
+                            <span>•</span>
+                            <span>December 15, 2024</span>
+                            <span>•</span>
+                            <span>12 min read</span>
                         </div>
+                        <button
+                            class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-semibold">
+                            Read Full Article
+                        </button>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="flex-1 bg-white text-gray-900 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                                    <i class="fas fa-book-open mr-2"></i>Read Article
-                                </a>
-                                <button
-                                    class="px-4 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-colors">
-                                    <i class="fas fa-share text-lg"></i>
-                                </button>
-                            </div>
-                            <div class="flex items-center gap-2 text-gray-400 text-sm">
-                                <i class="fas fa-heart text-red-400"></i>
-                                <span>234</span>
+
+                    <div class="order-1 lg:order-2">
+                        <div class="relative group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
+                                alt="Featured article"
+                                class="w-full h-96 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl group-hover:from-black/30 transition-all duration-500">
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Blog Post 1 -->
-                <article
-                    class="blog-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex-1 flex flex-col">
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center gap-2">
-                                <span
-                                    class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Tutorial</span>
-                                <span
-                                    class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold">SERIES</span>
-                            </div>
-                            <a href="#"
-                                class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
-                                Read <i class="fas fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                        <span class="text-xs text-gray-500 mb-3">Dec 10, 2024</span>
-                        <h4 class="font-bold text-lg text-gray-900 mb-3 leading-tight">Fine-tuning LLMs on Custom Data
-                        </h4>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 leading-relaxed">Complete guide to adapting large
-                            language models for domain-specific tasks with practical examples and code implementations.
-                        </p>
-
-                        <!-- Tags -->
-                        <div class="flex flex-wrap gap-1 mt-auto">
-                            <span class="bg-green-50 text-green-600 px-2 py-1 rounded text-xs">#LLM</span>
-                            <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs">#FineTuning</span>
-                            <span class="bg-orange-50 text-orange-600 px-2 py-1 rounded text-xs">#PyTorch</span>
-                        </div>
+        <!-- Latest Posts Grid -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="flex items-center justify-between mb-12">
+                    <div class="flex items-center gap-3">
+                        <div class="w-1 h-8 bg-gradient-to-b from-primary-600 to-secondary-600 rounded-full"></div>
+                        <h2 class="text-2xl font-bold text-gray-900">Latest Posts</h2>
                     </div>
-                </article>
+                    <a href="#" class="text-primary-600 hover:text-primary-700 font-semibold transition-colors">View All
+                        →</a>
+                </div>
 
-                <!-- Blog Post 2 -->
-                <article
-                    class="blog-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex-1 flex flex-col">
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center gap-2">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Post 1 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80"
+                            alt="Article" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
                                 <span
-                                    class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-semibold">Analysis</span>
-                                <span
-                                    class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold">TRENDING</span>
+                                    class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">Tutorial</span>
+                                <span class="text-gray-400 text-xs">Dec 10, 2024</span>
                             </div>
-                            <a href="#"
-                                class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
-                                Read <i class="fas fa-arrow-right text-xs"></i>
-                            </a>
+                            <h3 class="font-serif text-xl font-bold text-gray-900 mb-3 leading-tight">
+                                Fine-tuning LLMs on Custom Data: Complete Guide
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                                Learn how to adapt large language models for domain-specific tasks with practical
+                                examples
+                                and code implementations.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-500">8 min read</span>
+                                <div class="flex gap-2">
+                                    <button class="text-gray-400 hover:text-red-500 transition-colors">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="text-gray-400 hover:text-blue-500 transition-colors">
+                                        <i class="fas fa-bookmark"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <span class="text-xs text-gray-500 mb-3">Dec 5, 2024</span>
-                        <h4 class="font-bold text-lg text-gray-900 mb-3 leading-tight">AI Ethics in Practice</h4>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 leading-relaxed">Real-world considerations for
-                            responsible AI development and deployment, with case studies from leading tech companies.
-                        </p>
+                    </article>
 
-                        <!-- Tags -->
-                        <div class="flex flex-wrap gap-1 mt-auto">
-                            <span class="bg-purple-50 text-purple-600 px-2 py-1 rounded text-xs">#AIEthics</span>
-                            <span class="bg-red-50 text-red-600 px-2 py-1 rounded text-xs">#ResponsibleAI</span>
-                            <span class="bg-gray-50 text-gray-600 px-2 py-1 rounded text-xs">#Policy</span>
+                    <!-- Post 2 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80"
+                            alt="Article" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">Analysis</span>
+                                <span class="text-gray-400 text-xs">Dec 5, 2024</span>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-gray-900 mb-3 leading-tight">
+                                AI Ethics in Practice: Real-World Considerations
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                                Exploring responsible AI development and deployment with case studies from leading tech
+                                companies.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-500">6 min read</span>
+                                <div class="flex gap-2">
+                                    <button class="text-gray-400 hover:text-red-500 transition-colors">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="text-gray-400 hover:text-blue-500 transition-colors">
+                                        <i class="fas fa-bookmark"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Blog Post 3 -->
-                <article
-                    class="blog-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex-1 flex flex-col">
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center gap-2">
-                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-semibold">Case
+                    <!-- Post 3 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80"
+                            alt="Article" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-semibold">Case
                                     Study</span>
-                                <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">DEEP
-                                    DIVE</span>
+                                <span class="text-gray-400 text-xs">Nov 28, 2024</span>
                             </div>
-                            <a href="#"
-                                class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
-                                Read <i class="fas fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                        <span class="text-xs text-gray-500 mb-3">Nov 28, 2024</span>
-                        <h4 class="font-bold text-lg text-gray-900 mb-3 leading-tight">Building RAG Systems at Scale
-                        </h4>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 leading-relaxed">Deep dive into architecting and
-                            deploying RAG systems that can handle enterprise-scale workloads and requirements.</p>
-
-                        <!-- Tags -->
-                        <div class="flex flex-wrap gap-1 mt-auto">
-                            <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs">#RAG</span>
-                            <span class="bg-green-50 text-green-600 px-2 py-1 rounded text-xs">#LangChain</span>
-                            <span class="bg-purple-50 text-purple-600 px-2 py-1 rounded text-xs">#VectorDB</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 4 -->
-                <article
-                    class="blog-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex-1 flex flex-col">
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center gap-2">
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-semibold">Deep
-                                    Dive</span>
-                                <span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-semibold">HOT</span>
+                            <h3 class="font-serif text-xl font-bold text-gray-900 mb-3 leading-tight">
+                                Building RAG Systems at Enterprise Scale
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                                Deep dive into architecting and deploying retrieval-augmented generation systems for
+                                production.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-500">15 min read</span>
+                                <div class="flex gap-2">
+                                    <button class="text-gray-400 hover:text-red-500 transition-colors">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="text-gray-400 hover:text-blue-500 transition-colors">
+                                        <i class="fas fa-bookmark"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <a href="#"
-                                class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
-                                Read <i class="fas fa-arrow-right text-xs"></i>
-                            </a>
                         </div>
-                        <span class="text-xs text-gray-500 mb-3">Nov 20, 2024</span>
-                        <h4 class="font-bold text-lg text-gray-900 mb-3 leading-tight">MLOps Best Practices</h4>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 leading-relaxed">Comprehensive guide to implementing
-                            robust MLOps practices for reliable model deployment and monitoring.</p>
+                    </article>
 
-                        <!-- Tags -->
-                        <div class="flex flex-wrap gap-1 mt-auto">
-                            <span class="bg-orange-50 text-orange-600 px-2 py-1 rounded text-xs">#MLOps</span>
-                            <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs">#Docker</span>
-                            <span class="bg-green-50 text-green-600 px-2 py-1 rounded text-xs">#Kubernetes</span>
-                        </div>
-                    </div>
-                </article>
 
-                <!-- Blog Post 5 -->
-                <article
-                    class="blog-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex-1 flex flex-col">
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center gap-2">
-                                <span
-                                    class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Guide</span>
-                                <span
-                                    class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-semibold">ESSENTIAL</span>
-                            </div>
-                            <a href="#"
-                                class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
-                                Read <i class="fas fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                        <span class="text-xs text-gray-500 mb-3">Nov 15, 2024</span>
-                        <h4 class="font-bold text-lg text-gray-900 mb-3 leading-tight">Vector Databases Explained</h4>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 leading-relaxed">Complete overview of vector
-                            databases, their use cases, and how to choose the right solution for your AI applications.
-                        </p>
-
-                        <!-- Tags -->
-                        <div class="flex flex-wrap gap-1 mt-auto">
-                            <span class="bg-purple-50 text-purple-600 px-2 py-1 rounded text-xs">#VectorDB</span>
-                            <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs">#Embeddings</span>
-                            <span class="bg-green-50 text-green-600 px-2 py-1 rounded text-xs">#AI</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 6 -->
-                <article
-                    class="blog-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex-1 flex flex-col">
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center gap-2">
-                                <span
-                                    class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs font-semibold">Opinion</span>
-                                <span
-                                    class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold">FUTURE</span>
-                            </div>
-                            <a href="#"
-                                class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
-                                Read <i class="fas fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                        <span class="text-xs text-gray-500 mb-3">Nov 8, 2024</span>
-                        <h4 class="font-bold text-lg text-gray-900 mb-3 leading-tight">The Future of AI Agents</h4>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 leading-relaxed">Exploring the evolution of AI
-                            agents and their potential impact on various industries and everyday life.</p>
-
-                        <!-- Tags -->
-                        <div class="flex flex-wrap gap-1 mt-auto">
-                            <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs">#AIAgents</span>
-                            <span class="bg-green-50 text-green-600 px-2 py-1 rounded text-xs">#Automation</span>
-                            <span class="bg-purple-50 text-purple-600 px-2 py-1 rounded text-xs">#Future</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 7 -->
-                <article
-                    class="blog-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex-1 flex flex-col">
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center gap-2">
-                                <span
-                                    class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-semibold">Technical</span>
-                                <span
-                                    class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold">ADVANCED</span>
-                            </div>
-                            <a href="#"
-                                class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
-                                Read <i class="fas fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                        <span class="text-xs text-gray-500 mb-3">Oct 30, 2024</span>
-                        <h4 class="font-bold text-lg text-gray-900 mb-3 leading-tight">Optimizing LLM Inference</h4>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 leading-relaxed">Advanced techniques for optimizing
-                            large language model inference speed and reducing computational costs in production.</p>
-
-                        <!-- Tags -->
-                        <div class="flex flex-wrap gap-1 mt-auto">
-                            <span class="bg-red-50 text-red-600 px-2 py-1 rounded text-xs">#Performance</span>
-                            <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs">#LLM</span>
-                            <span class="bg-orange-50 text-orange-600 px-2 py-1 rounded text-xs">#Optimization</span>
-                        </div>
-                    </div>
-                </article>
-
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Quote Section -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <div
-                    class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg border border-gray-100 p-8 relative overflow-hidden">
-                    <!-- Decorative elements -->
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500">
+        <!-- Categories Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Explore by Category</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Discover articles organized by topics that matter most in the AI and machine learning space.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="#"
+                        class="group bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-2xl hover:from-blue-100 hover:to-blue-200 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-brain text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Machine Learning</h3>
+                        <p class="text-gray-600 text-sm mb-3">Deep learning, algorithms, and model optimization</p>
+                        <span class="text-blue-600 text-sm font-semibold">12 articles →</span>
+                    </a>
+
+                    <a href="#"
+                        class="group bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-2xl hover:from-green-100 hover:to-green-200 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-robot text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">AI Research</h3>
+                        <p class="text-gray-600 text-sm mb-3">Latest breakthroughs and research findings</p>
+                        <span class="text-green-600 text-sm font-semibold">8 articles →</span>
+                    </a>
+
+                    <a href="#"
+                        class="group bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-2xl hover:from-purple-100 hover:to-purple-200 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Tutorials</h3>
+                        <p class="text-gray-600 text-sm mb-3">Hands-on guides and implementation tutorials</p>
+                        <span class="text-purple-600 text-sm font-semibold">15 articles →</span>
+                    </a>
+
+                    <a href="#"
+                        class="group bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-2xl hover:from-orange-100 hover:to-orange-200 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Industry Insights</h3>
+                        <p class="text-gray-600 text-sm mb-3">Trends, analysis, and market perspectives</p>
+                        <span class="text-orange-600 text-sm font-semibold">6 articles →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container mx-auto px-4">
+                <div class="footer-grid">
+                    <!-- Brand -->
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="footer-logo-icon">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-xl font-bold">Sahabaj Alam</span>
+                        </div>
+                        <div class="footer-social">
+                            <a href="https://github.com/sahabajalam" class="footer-social-link"
+                                aria-label="GitHub Profile" target="_blank">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/sahabajalam/" class="footer-social-link"
+                                aria-label="LinkedIn Profile" target="_blank">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://x.com/sahabaj_alam" class="footer-social-link" aria-label="X Profile"
+                                target="_blank">
+                                <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:sahabajalam@yahoo.com" class="footer-social-link" aria-label="Email Contact"
+                                target="_blank">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="absolute -top-2 -left-2 w-4 h-4 bg-primary-500 rounded-full opacity-20"></div>
-                    <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-secondary-500 rounded-full opacity-20"></div>
 
-                    <blockquote class="text-2xl md:text-3xl font-light text-gray-800 mb-6 leading-relaxed italic">
-                        "All I want in life is good food and eight hours of peaceful sleep, everything else follows from
-                        that."
-                    </blockquote>
+                    <!-- Quick Links -->
+                    <div class="footer-section ml-6 md:ml-8 lg:ml-12">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#work-insights">Work &amp; Insights</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <div class="flex items-center justify-center gap-3">
-                        <div class="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
-                        <span class="text-sm font-semibold text-gray-600 tracking-wider uppercase">Life
-                            Philosophy</span>
-                        <div class="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
+                <!-- Bottom Footer -->
+                <div class="footer-bottom">
+                    <p class="footer-credit text-gray-400">
+                        © 2025 Sahabaj Alam. Proudly built with
+                        <a href="https://claude.ai" target="_blank" rel="noopener noreferrer"
+                            class="footer-link">Claude</a>
+                        &amp;
+                        <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer"
+                            class="footer-link">GitHub Copilot</a>
+                        <span aria-hidden="true"> ❤️</span>
+                    </p>
+                    <div class="footer-bottom-links">
+                        <button class="back-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
+                            Back to Top <i class="fas fa-arrow-up ml-1" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Me Section -->
-    <section class="py-8 bg-gradient-to-br from-slate-900 via-slate-800 to-green-900">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Contact Me
-            </h2>
-            <p class="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
-                Let's collaborate on your next project. I'm always excited to work on innovative solutions.
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-4 mb-6">
-                <a href="https://x.com/sahabaj_alam"
-                    class="social-link bg-black text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
-                    target="_blank">
-                    <i class="fab fa-x-twitter mr-2"></i>Twitter
-                </a>
-                <a href="https://www.linkedin.com/in/sahabajalam/"
-                    class="social-link bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
-                    target="_blank">
-                    <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
-                </a>
-                <a href="https://github.com/sahabajalam"
-                    class="social-link bg-gray-800 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
-                    target="_blank">
-                    <i class="fab fa-github mr-2"></i>GitHub
-                </a>
-                <a href="https://medium.com/@sahabaj1101"
-                    class="social-link bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
-                    target="_blank">
-                    <i class="fab fa-medium mr-2"></i>Medium
-                </a>
-            </div>
-
-            <div class="border-t border-white/10 pt-6">
-                <p class="text-gray-400 text-sm">
-                    © 2025 Sahabaj Alam. Proudly built with
-                    <a href="https://claude.ai" target="_blank" rel="noopener noreferrer"
-                        class="text-white hover:text-green-400 transition-colors underline">Claude</a>
-                    &
-                    <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer"
-                        class="text-white hover:text-green-400 transition-colors underline">GitHub Copilot</a>
-                    <span class="text-red-400">❤️</span>
-                </p>
-            </div>
-        </div>
-    </section>
-</body>
+        </footer>
+    </body>
 
 </html>

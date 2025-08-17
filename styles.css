@@ -1,15 +1,16 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-    --color-primary: #00b96b;
+    /* darkened primary for stronger button appearance */
+    --color-primary: #008f4f;
     --color-secondary: #0088cc;
     /* Hero background used across portfolio files */
     --hero-bg: linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #f1f5f9 50%, #f8fafc 75%, #ffffff 100%);
-    --gradient-primary: linear-gradient(135deg, #00b96b 0%, #0088cc 100%);
+    --gradient-primary: linear-gradient(135deg, #008f4f 0%, #0088cc 100%);
     --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
     --z-max: 9999;
     --footer-gradient: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
-    --primary: #00b96b;
+    --primary: #008f4f;
     --secondary: #0088cc;
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
@@ -881,7 +882,7 @@ html {
 
 .navbar-logo:hover .navbar-logo-icon {
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 185, 107, 0.15), 0 8px 25px rgba(0, 185, 107, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 143, 79, 0.15), 0 8px 25px rgba(0, 143, 79, 0.25);
 }
 
 .navbar-logo-icon {
@@ -895,7 +896,7 @@ html {
     color: #ffffff;
     font-size: 1.2rem;
     font-weight: 700;
-    box-shadow: 0 10px 30px rgba(0, 185, 107, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 143, 79, 0.15);
     transition: all 0.3s ease;
 }
 
@@ -984,7 +985,7 @@ html {
 .navbar-social-link:hover {
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 185, 107, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 143, 79, 0.15);
 }
 
 .navbar-social-link i {
@@ -1087,7 +1088,7 @@ html {
 
 .mobile-menu-link:hover,
 .mobile-menu-link.active {
-    background: rgba(0, 185, 107, 0.1);
+    background: rgba(0, 143, 79, 0.1);
     color: #00b96b;
     transform: translateX(0.5rem);
 }
@@ -1131,7 +1132,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at top left, rgba(0, 185, 107, 0.05) 0%, transparent 50%),
+    background: radial-gradient(ellipse at top left, rgba(0, 143, 79, 0.05) 0%, transparent 50%),
         radial-gradient(ellipse at bottom right, rgba(0, 136, 204, 0.05) 0%, transparent 50%);
     pointer-events: none;
 }
@@ -1360,8 +1361,8 @@ html {
 /* ===== COMPONENT STYLES ===== */
 .availability-badge {
     background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-    border: 1px solid rgba(34, 197, 94, 0.2);
-    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(16, 120, 68, 0.2);
+    box-shadow: 0 4px 15px rgba(16, 120, 68, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
@@ -1402,13 +1403,13 @@ html {
 
 .feature-icon {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    box-shadow: 0 4px 12px rgba(0, 185, 107, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 143, 79, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }
 
 .feature-item:hover .feature-icon {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 6px 20px rgba(0, 185, 107, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 143, 79, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary {
@@ -1422,7 +1423,7 @@ html {
     align-items: center;
     gap: 0.5rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 25px rgba(0, 185, 107, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 143, 79, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
     border: none;
     cursor: pointer;
     position: relative;
@@ -1446,7 +1447,7 @@ html {
 
 .btn-primary:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(0, 185, 107, 0.35), 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 143, 79, 0.35), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
@@ -1475,7 +1476,7 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 185, 107, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 143, 79, 0.1), transparent);
     transition: left 0.5s ease;
 }
 
@@ -1487,7 +1488,7 @@ html {
     border-color: var(--color-primary);
     color: var(--color-primary);
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 25px rgba(0, 185, 107, 0.2), 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 25px rgba(0, 143, 79, 0.2), 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Make navbar CTA use the same primary gradient look but smaller */
@@ -1502,14 +1503,14 @@ html {
     padding: 0.45rem 0.9rem;
     background: var(--gradient-primary);
     color: white;
-    box-shadow: 0 8px 20px rgba(0, 185, 107, 0.18);
+    box-shadow: 0 8px 20px rgba(0, 143, 79, 0.18);
     border-radius: 8px;
     font-weight: 600;
 }
 
 .navbar-cta-button.btn-primary:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 14px 30px rgba(0, 185, 107, 0.28);
+    box-shadow: 0 14px 30px rgba(0, 143, 79, 0.28);
 }
 
 /* Hero-centered CTAs should use slightly larger padding but same style */
@@ -1572,7 +1573,7 @@ html {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 185, 107, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 143, 79, 0.5), transparent);
 }
 
 .chat-body {
@@ -1592,7 +1593,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(0, 185, 107, 0.03) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(0, 143, 79, 0.03) 0%, transparent 70%);
     pointer-events: none;
     z-index: 1;
 }
@@ -1601,7 +1602,7 @@ html {
     overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 185, 107, 0.3) transparent;
+    scrollbar-color: rgba(0, 143, 79, 0.3) transparent;
     position: relative;
     z-index: 2;
     flex: 1;
@@ -1623,7 +1624,7 @@ html {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 185, 107, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 143, 79, 0.3), transparent);
 }
 
 .quick-action-btn {
@@ -1648,7 +1649,7 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 185, 107, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 143, 79, 0.3), transparent);
     transition: left 0.5s ease;
 }
 
@@ -1658,7 +1659,7 @@ html {
 
 .quick-action-btn:hover {
     background: linear-gradient(135deg, #00b96b 0%, #0088cc 100%);
-    border-color: rgba(0, 185, 107, 0.3);
+    border-color: rgba(0, 143, 79, 0.3);
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 185, 107, 0.3);
 }

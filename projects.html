@@ -7,8 +7,17 @@
     <title>Projects - Sahabaj Alam</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        // Global functions for footer functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 
     <script>
         tailwind.config = {
@@ -18,9 +27,9 @@
                         primary: {
                             50: '#f0fdf4',
                             100: '#dcfce7',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d'
+                            500: '#00b96b',
+                            600: '#00b96b',
+                            700: '#00b96b'
                         },
                         secondary: {
                             500: '#3b82f6',
@@ -29,53 +38,306 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif']
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'Georgia', 'serif']
                     }
                 }
             }
         }
     </script>
+    </body>
 
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
+</html>
+
+<style>
+    .gradient-bg {
+        background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
+    }
+
+    .hero-gradient {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+    }
+
+    .project-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .gradient-text {
+        /* use the portfolio's primary/secondary gradient defined in styles.css */
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .tech-tag {
+        transition: all 0.2s ease;
+    }
+
+    .tech-tag:hover {
+        transform: scale(1.05);
+    }
+
+    .filter-btn {
+        transition: all 0.3s ease;
+    }
+
+    .social-link--twitter {
+        background: #1a1a1a;
+    }
+
+    .social-link--linkedin {
+        background: #0077b5;
+    }
+
+    .social-link--github {
+        background: #333;
+    }
+
+    .social-link--medium {
+        background: #000;
+    }
+
+    .inspiration-section {
+        padding: 3rem 0 4rem;
+        background: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.3);
+    }
+
+    .follow-card {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .follow-title {
+        font-size: clamp(1.875rem, 5vw, 2.25rem);
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 1rem;
+    }
+
+    .follow-subtitle {
+        font-size: 1.25rem;
+        color: #4a4a4a;
+        margin-bottom: 2rem;
+    }
+
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        color: white;
+        min-width: 140px;
+        justify-content: center;
+    }
+
+    .social-link:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+        color: white;
+        padding: 2rem 0;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-logo-icon {
+        width: 2rem;
+        height: 2rem;
+        background: linear-gradient(135deg, #00b96b 0%, #0088cc 100%);
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .footer-social-link {
+        width: 2rem;
+        height: 2rem;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #e5e7eb;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.875rem;
+    }
+
+    .footer-social-link:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: white;
+    }
+
+    .footer-section h3 {
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: #ffffff;
+        font-size: 1rem;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        color: #e5e7eb;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+        color: #ffffff;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    .footer-credit {
+        font-family: 'Playfair Display', serif;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        color: #d1d5db;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .footer-link {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .back-to-top {
+        background: none;
+        border: none;
+        color: #e5e7eb;
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: color 0.3s ease;
+    }
+
+    .back-to-top:hover {
+        color: #ffffff;
+    }
+
+    @media (max-width: 640px) {
+        .social-links {
+            flex-direction: column;
+            align-items: center;
         }
 
-        .project-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
+        .social-link {
+            width: 100%;
+            max-width: 280px;
         }
 
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        .footer-brand {
+            grid-column: span 1;
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #16a34a, #2563eb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .footer-links {
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
         }
-
-        .tech-tag {
-            transition: all 0.2s ease;
-        }
-
-        .tech-tag:hover {
-            transform: scale(1.05);
-        }
-
-        .filter-btn {
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn.active {
-            background: linear-gradient(135deg, #16a34a, #2563eb);
-            color: white;
-            transform: scale(1.05);
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body class="bg-gray-50 font-sans">
@@ -83,40 +345,47 @@
     <header class="gradient-bg sticky top-0 z-50 border-b border-gray-200/50 backdrop-blur-lg">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="index.html"
-                    class="flex items-center gap-3 text-gray-900 hover:text-primary-600 transition-colors">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-arrow-left text-white"></i>
-                    </div>
-                    <span class="font-semibold">Back to Home</span>
+                <a href="index.html" class="btn-primary px-4 py-2 rounded-lg">
+                    Home
                 </a>
 
-                <div class="flex items-center gap-3 text-gray-900">
-                    <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center"
-                        aria-hidden="true">
-                        <i class="fas fa-code text-white"></i>
-                    </div>
-                    <!-- Name removed per request to keep header minimal -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Machine
+                        Learning</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">AI
+                        Research</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Full
+                        Stack</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Data
+                        Science</a>
+                </div>
+
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-code text-white"></i>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="gradient-bg py-4">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-2">
-                Featured <span class="gradient-text">Projects</span>
-            </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Explore my collection of machine learning, AI, and data science projects that solve real-world problems
-            </p>
+    <section class="hero-gradient py-2 relative overflow-hidden">
+        <div class="absolute inset-0 bg-white/20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="font-serif text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                    Featured <span class="gradient-text">Projects</span>
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                    Explore my collection of machine learning, AI, and data science projects that solve real-world
+                    problems.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Projects Grid -->
-    <section class="py-4 bg-white">
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -125,7 +394,8 @@
                     data-category="ai-ml">
                     <div class="relative h-64 bg-gradient-to-br from-purple-600/20 to-blue-600/20">
                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
-                            alt="AI project overview" loading="lazy"
+                            alt="AI project overview" loading="lazy" decoding="async"
+                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
                             class="absolute inset-0 w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black/30"></div>
                         <div class="absolute top-6 left-6">
@@ -151,12 +421,11 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex gap-3">
-                                <button class="btn-primary project-demo flex-1">
+                                <button class="btn-primary py-3 px-4 rounded-lg font-semibold">
                                     <i class="fas fa-external-link-alt mr-2"></i>Live Demo
                                 </button>
-                                <button
-                                    class="px-4 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-colors">
-                                    <i class="fab fa-github text-lg"></i>
+                                <button class="btn-primary py-3 px-4 rounded-lg font-semibold">
+                                    <i class="fab fa-github mr-2"></i>View Code
                                 </button>
                             </div>
                             <div class="flex items-center gap-2 text-gray-400 text-sm">
@@ -170,9 +439,10 @@
                 <!-- Project Card 1 -->
                 <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
                     data-category="nlp">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 relative">
+                    <div class="h-64 bg-gradient-to-br from-blue-500 to-indigo-600 relative">
                         <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=1200&q=80"
-                            alt="NLP project preview" loading="lazy"
+                            alt="NLP project preview" loading="lazy" decoding="async"
+                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
                             class="absolute inset-0 w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black/30"></div>
                         <div class="absolute bottom-4 left-4 right-4">
@@ -189,12 +459,11 @@
                                 class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Streamlit</span>
                         </div>
                         <div class="flex gap-2">
-                            <button class="btn-primary project-demo flex-1">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
                             </button>
-                            <button
-                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                                <i class="fab fa-github text-sm"></i>
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fab fa-github mr-1"></i>View Code
                             </button>
                         </div>
                     </div>
@@ -205,7 +474,8 @@
                     data-category="computer-vision">
                     <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 relative">
                         <img src="https://images.unsplash.com/photo-1505765056114-1b36f3ef8c3b?auto=format&fit=crop&w=1200&q=80"
-                            alt="Computer vision preview" loading="lazy"
+                            alt="Computer vision preview" loading="lazy" decoding="async"
+                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
                             class="absolute inset-0 w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black/30"></div>
                         <div class="absolute bottom-4 left-4 right-4">
@@ -221,12 +491,11 @@
                                 class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">PyTorch</span>
                         </div>
                         <div class="flex gap-2">
-                            <button class="btn-primary project-demo flex-1">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
                             </button>
-                            <button
-                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                                <i class="fab fa-github text-sm"></i>
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fab fa-github mr-1"></i>View Code
                             </button>
                         </div>
                     </div>
@@ -237,7 +506,8 @@
                     data-category="data-science">
                     <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 relative">
                         <img src="https://images.unsplash.com/photo-1526378725478-2f3f92d8d289?auto=format&fit=crop&w=1200&q=80"
-                            alt="Data science visualization" loading="lazy"
+                            alt="Data science visualization" loading="lazy" decoding="async"
+                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
                             class="absolute inset-0 w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black/30"></div>
                         <div class="absolute bottom-4 left-4 right-4">
@@ -252,12 +522,11 @@
                             <span class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Plotly</span>
                         </div>
                         <div class="flex gap-2">
-                            <button class="btn-primary project-demo flex-1">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
                             </button>
-                            <button
-                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                                <i class="fab fa-github text-sm"></i>
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fab fa-github mr-1"></i>View Code
                             </button>
                         </div>
                     </div>
@@ -268,7 +537,9 @@
                     data-category="web-app">
                     <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 relative">
                         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
-                            alt="Web app UI" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+                            alt="Web app UI" loading="lazy" decoding="async"
+                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
+                            class="absolute inset-0 w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black/30"></div>
                         <div class="absolute bottom-4 left-4 right-4">
                             <h3 class="text-white font-bold text-lg mb-1">Stock Price Analyzer</h3>
@@ -283,12 +554,11 @@
                                 class="tech-tag bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Chart.js</span>
                         </div>
                         <div class="flex gap-2">
-                            <button class="btn-primary project-demo flex-1">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
                             </button>
-                            <button
-                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                                <i class="fab fa-github text-sm"></i>
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fab fa-github mr-1"></i>View Code
                             </button>
                         </div>
                     </div>
@@ -299,7 +569,8 @@
                     data-category="ai-ml">
                     <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 relative">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
-                            alt="AI model visualization" loading="lazy"
+                            alt="AI model visualization" loading="lazy" decoding="async"
+                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
                             class="absolute inset-0 w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black/30"></div>
                         <div class="absolute bottom-4 left-4 right-4">
@@ -316,12 +587,11 @@
                             <span class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Docker</span>
                         </div>
                         <div class="flex gap-2">
-                            <button class="btn-primary project-demo flex-1">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
                             </button>
-                            <button
-                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                                <i class="fab fa-github text-sm"></i>
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fab fa-github mr-1"></i>View Code
                             </button>
                         </div>
                     </div>
@@ -332,7 +602,9 @@
                     data-category="nlp">
                     <div class="h-48 bg-gradient-to-br from-emerald-500 to-green-600 relative">
                         <img src="https://images.unsplash.com/photo-1526326762325-8c3a1f0a4b5b?auto=format&fit=crop&w=1200&q=80"
-                            alt="NLP dataset" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+                            alt="NLP dataset" loading="lazy" decoding="async"
+                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
+                            class="absolute inset-0 w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black/30"></div>
                         <div class="absolute bottom-4 left-4 right-4">
                             <h3 class="text-white font-bold text-lg mb-1">Sentiment Analyzer</h3>
@@ -348,12 +620,11 @@
                                 class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">FastAPI</span>
                         </div>
                         <div class="flex gap-2">
-                            <button class="btn-primary project-demo flex-1">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
                             </button>
-                            <button
-                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                                <i class="fab fa-github text-sm"></i>
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fab fa-github mr-1"></i>View Code
                             </button>
                         </div>
                     </div>
@@ -364,7 +635,9 @@
                     data-category="data-science">
                     <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 relative">
                         <img src="https://images.unsplash.com/photo-1508385082359-f1b8ff5a3d6f?auto=format&fit=crop&w=1200&q=80"
-                            alt="Data analysis" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+                            alt="Data analysis" loading="lazy" decoding="async"
+                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
+                            class="absolute inset-0 w-full h-full object-cover" />
                         <div class="absolute inset-0 bg-black/30"></div>
                         <div class="absolute bottom-4 left-4 right-4">
                             <h3 class="text-white font-bold text-lg mb-1">Sales Forecasting Dashboard</h3>
@@ -379,21 +652,20 @@
                             <span class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Plotly</span>
                         </div>
                         <div class="flex gap-2">
-                            <button class="btn-primary project-demo flex-1">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            <button class="btn-primary project-demo py-2 px-4 rounded-lg font-semibold">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
                             </button>
-                            <button
-                                class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                                <i class="fab fa-github text-sm"></i>
+                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                <i class="fab fa-github mr-1"></i>View Code
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- View All Projects Button -->
-                <div class="col-span-full flex justify-center">
+                <div class="col-span-full flex justify-center mt-8">
                     <a href="https://github.com/sahabajalam" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-3 btn-primary project-demo text-white px-6 py-3 rounded-2xl font-semibold shadow-lg hover:scale-105 transition-transform">
+                        class="btn-primary hero-cta flex items-center gap-2">
                         <i class="fab fa-github text-lg"></i>
                         View All Projects on GitHub
                     </a>
@@ -403,80 +675,67 @@
         </div>
     </section>
 
-    <!-- Quote Section -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <div
-                    class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg border border-gray-100 p-8 relative overflow-hidden">
-                    <!-- Decorative elements -->
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-4">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                        </div>
+                        <span class="text-xl font-bold">Sahabaj Alam</span>
                     </div>
-                    <div class="absolute -top-2 -left-2 w-4 h-4 bg-primary-500 rounded-full opacity-20"></div>
-                    <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-secondary-500 rounded-full opacity-20"></div>
-
-                    <blockquote class="text-2xl md:text-3xl font-light text-gray-800 mb-6 leading-relaxed italic">
-                        "All I want in life is good food and eight hours of peaceful sleep, everything else follows from
-                        that."
-                    </blockquote>
-
-                    <div class="flex items-center justify-center gap-3">
-                        <div class="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
-                        <span class="text-sm font-semibold text-gray-600 tracking-wider uppercase">Life
-                            Philosophy</span>
-                        <div class="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
+                    <div class="footer-social">
+                        <a href="https://github.com/sahabajalam" class="footer-social-link" aria-label="GitHub Profile"
+                            target="_blank">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sahabajalam/" class="footer-social-link"
+                            aria-label="LinkedIn Profile" target="_blank">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://x.com/sahabaj_alam" class="footer-social-link" aria-label="X Profile"
+                            target="_blank">
+                            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:sahabajalam@yahoo.com" class="footer-social-link" aria-label="Email Contact"
+                            target="_blank">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
                     </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section ml-6 md:ml-8 lg:ml-12">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#work-insights">Work & Insights</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+                <p class="footer-credit text-gray-400">
+                    © 2025 Sahabaj Alam. Proudly built with
+                    <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="footer-link">Claude</a>
+                    &
+                    <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer"
+                        class="footer-link">GitHub Copilot</a>
+                    <span aria-hidden="true"> ❤️</span>
+                </p>
+                <div class="footer-bottom-links">
+                    <button class="back-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
+                        Back to Top <i class="fas fa-arrow-up ml-1" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Me Section -->
-    <section class="py-8 bg-gradient-to-br from-slate-900 via-slate-800 to-green-900">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Contact Me
-            </h2>
-            <p class="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
-                Let's collaborate on your next project. I'm always excited to work on innovative solutions.
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-4 mb-6">
-                <a href="https://x.com/sahabaj_alam"
-                    class="social-link bg-black text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
-                    target="_blank">
-                    <i class="fab fa-x-twitter mr-2"></i>Twitter
-                </a>
-                <a href="https://www.linkedin.com/in/sahabajalam/"
-                    class="social-link bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
-                    target="_blank">
-                    <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
-                </a>
-                <a href="https://github.com/sahabajalam"
-                    class="social-link bg-gray-800 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
-                    target="_blank">
-                    <i class="fab fa-github mr-2"></i>GitHub
-                </a>
-                <a href="https://medium.com/@sahabaj1101"
-                    class="social-link bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center justify-center min-w-[140px]"
-                    target="_blank">
-                    <i class="fab fa-medium mr-2"></i>Medium
-                </a>
-            </div>
-
-            <div class="border-t border-white/10 pt-6">
-                <p class="text-gray-400 text-sm">
-                    © 2025 Sahabaj Alam. Proudly built with
-                    <a href="https://claude.ai" target="_blank" rel="noopener noreferrer"
-                        class="text-white hover:text-green-400 transition-colors underline">Claude</a>
-                    &
-                    <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer"
-                        class="text-white hover:text-green-400 transition-colors underline">GitHub Copilot</a>
-                    <span class="text-red-400">❤️</span>
-                </p>
-            </div>
-        </div>
-    </section>
+    </footer>
 
     <script>
         // Filter functionality
@@ -513,6 +772,3 @@
         `;
         document.head.appendChild(style);
     </script>
-</body>
-
-</html>
