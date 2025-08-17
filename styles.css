@@ -2299,8 +2299,13 @@ html {
         display: flex;
     }
 
+    /* Hide social links and contact button on mobile */
     .navbar-social {
-        margin-left: 0.5rem;
+        display: none;
+    }
+
+    .navbar-cta-button {
+        display: none;
     }
 
     .navbar-mobile-menu-toggle.active .navbar-hamburger-line:nth-child(1) {
