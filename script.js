@@ -170,8 +170,14 @@ class ChatInterface {
     setupEventListeners() {
         // Setup quick action buttons
         document.querySelectorAll('.quick-action-btn').forEach(btn => {
+            // If an inline onclick is present, assume it's intentional and skip adding
+            // an additional listener to avoid duplicate calls.
+            if (btn.hasAttribute('onclick')) return;
+
+            // Prefer an explicit data-action attribute when available.
+            const actionFromData = btn.getAttribute('data-action');
             btn.addEventListener('click', () => {
-                const action = btn.onclick?.toString().match(/'([^']+)'/)?.[1];
+                const action = actionFromData || btn.onclick?.toString().match(/'([^']+)'/)?.[1];
                 if (action) {
                     this.askQuestion(action);
                 }
