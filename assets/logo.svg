@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" class="code-icon">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#008f4f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0088cc;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Icon gradient (white) -->
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Subtle highlight gradient -->
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background rounded rectangle -->
+  <rect x="0" y="0" width="40" height="40" rx="8" ry="8" fill="url(#bgGradient)" />
+  
+  <!-- Subtle highlight overlay -->
+  <rect x="0" y="0" width="40" height="40" rx="8" ry="8" fill="url(#highlight)" />
+  
+  <!-- Code icon (scaled and centered) -->
+  <g transform="translate(8, 12) scale(0.038, 0.038)">
+    <path fill="url(#iconGradient)" d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/>
+  </g>
+  
+  <style>
+    .code-icon {
+      filter: drop-shadow(0 4px 12px rgba(0, 143, 79, 0.2)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .code-icon:hover {
+      transform: translateY(-2px) scale(1.05);
+      filter: drop-shadow(0 8px 25px rgba(0, 143, 79, 0.3)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+    }
+    
+    /* Alternative sizes */
+    .code-icon-sm { width: 32px; height: 32px; }
+    .code-icon-md { width: 40px; height: 40px; }
+    .code-icon-lg { width: 48px; height: 48px; }
+    
+    /* Alternative background styles */
+    .code-icon-dark {
+      /* For dark backgrounds - inverted colors */
+    }
+    
+    .code-icon-minimal {
+      /* Just the icon without background */
+      background: none;
+    }
+  </style>
+</svg>
