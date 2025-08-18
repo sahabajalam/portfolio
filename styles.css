@@ -1205,7 +1205,8 @@ html {
 
     .hero-content-wrapper .flex-row {
         gap: 0.5rem;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-left: 0.5rem; /* small indent so buttons align with hero text */
     }
 }
 
