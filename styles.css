@@ -1194,6 +1194,21 @@ html {
     }
 }
 
+/* Keep hero CTA buttons inline on narrow screens */
+@media (max-width: 480px) {
+
+    .hero-content-wrapper .btn-primary,
+    .hero-content-wrapper .btn-secondary {
+        padding: 0.6rem 1rem;
+        font-size: 0.92rem;
+    }
+
+    .hero-content-wrapper .flex-row {
+        gap: 0.5rem;
+        justify-content: center;
+    }
+}
+
 /* make intro appear when page loads via small JS hook (CSS only fallback remains) */
 
 /* ===== HERO GRID LAYOUT ===== */
