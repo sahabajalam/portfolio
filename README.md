@@ -1,13 +1,19 @@
-# Portfolio — Sahabaj Alam
+# Port- `index.html` — Main lan## What to edit
+
+- Update text, links and contact info directly inside the HTML files (`index.html`, `projects.html`, `articles.html`).
+- Replace images in `assets/` and update image src attributes. page: hero, interactive chat-style assistant, featured projects, skills, certifications, contact and footer.
+- `projects.html` — Projects listing / gallery (featured + grid of project cards).
+- `articles.html` — Articles / blog listing page and featured posts.
+- `styles.css` — Custom stylesheet with utility classes, layout and component styles.o — Sahabaj Alam
 
 A small static portfolio (HTML/CSS/JS) for Sahabaj Alam. The site is built with plain HTML and custom CSS, uses Tailwind via CDN, Font Awesome icons and Google Fonts. It's meant to be served as static files (GitHub Pages, Netlify, any static host).
 
 ## Repository contents
 
 - `index.html` — Main landing page: hero, interactive chat-style assistant, featured projects, skills, certifications, contact and footer.
-- `projects.html` — Projects listing / gallery (featured + grid of project cards).
-- `articles.html` and `blog.html` — Articles / blog listing pages and featured posts.
-- `styles.css` — Custom stylesheet with utility classes, layout and component styles.
+-- `projects.html` — Projects listing / gallery (featured + grid of project cards).
+-- `articles.html` — Articles / blog listing page and featured posts.
+-- `styles.css` — Custom stylesheet with utility classes, layout and component styles.
 - `script.js` — Front-end JavaScript: navigation, chat interface, animations, ripple effects and small UI utilities.
 - `assets/` — Static assets used by the pages (currently `claude-color.svg`, `claude-highres.svg`).
 
@@ -28,7 +34,7 @@ Or use VS Code Live Server extension to preview with auto-reload.
 
 ## What to edit
 
-- Update text, links and contact info directly inside the HTML files (`index.html`, `projects.html`, `articles.html`, `blog.html`).
+-- Update text, links and contact info directly inside the HTML files (`index.html`, `projects.html`, `articles.html`).
 - Replace images in `assets/` and update image src attributes.
 - Styles live in `styles.css` — small tweaks can be made there. `script.js` contains UI behavior (chat responses, navigation, animations).
 
