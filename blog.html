@@ -257,24 +257,6 @@
                 text-align: center;
             }
         }
-
-        /* Ensure nav buttons have intro-name styling */
-        .intro-name {
-            font-weight: 700 !important;
-            color: #1a1a1a !important;
-            background: linear-gradient(90deg, rgba(0, 185, 107, 0.09), rgba(37, 99, 235, 0.08)) !important;
-            padding: 6px 12px !important;
-            border-radius: 999px !important;
-            border: 1px solid rgba(0, 0, 0, 0.06) !important;
-            box-shadow: 0 10px 26px rgba(2, 6, 23, 0.06) !important;
-            text-decoration: none !important;
-            transition: all 0.3s ease !important;
-        }
-
-        .intro-name:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 15px 35px rgba(2, 6, 23, 0.1) !important;
-        }
     </style>
 </head>
 
@@ -294,10 +276,13 @@
                 </a>
 
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#" class="intro-name">Machine Learning</a>
-                    <a href="#" class="intro-name">AI Research</a>
-                    <a href="#" class="intro-name">Tutorials</a>
-                    <a href="#" class="intro-name">Industry Insights</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Machine
+                        Learning</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">AI
+                        Research</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Tutorials</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Industry
+                        Insights</a>
                 </div>
 
                 <div
@@ -585,7 +570,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#about">About</a></li>
                         <li><a href="projects.html">Projects</a></li>
-                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="blog.html">Articles</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>

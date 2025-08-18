@@ -1,51 +1,55 @@
 # Portfolio — Sahabaj Alam
 
-A simple, static portfolio site built with plain HTML, Tailwind CSS (via CDN), and Font Awesome icons. This repo contains the personal portfolio pages (home, projects, articles) and assets ready to be hosted on GitHub Pages or any static file host.
+A small static portfolio (HTML/CSS/JS) for Sahabaj Alam. The site is built with plain HTML and custom CSS, uses Tailwind via CDN, Font Awesome icons and Google Fonts. It's meant to be served as static files (GitHub Pages, Netlify, any static host).
 
-## What you'll find here
+## Repository contents
 
-- `index.html` — Main landing page (hero, projects preview, articles preview, contact, footer).
-- `projects.html` — Full projects listing page.
-- `articles.html` — Articles / blog listing page.
-- `styles.css` — Project-specific custom styles.
-- `script.js` / `bscripts.js` — Client-side JavaScript used by the pages.
-- `bindex.html` — (backup / alternative index if present)
+- `index.html` — Main landing page: hero, interactive chat-style assistant, featured projects, skills, certifications, contact and footer.
+- `projects.html` — Projects listing / gallery (featured + grid of project cards).
+- `articles.html` and `blog.html` — Articles / blog listing pages and featured posts.
+- `styles.css` — Custom stylesheet with utility classes, layout and component styles.
+- `script.js` — Front-end JavaScript: navigation, chat interface, animations, ripple effects and small UI utilities.
+- `assets/` — Static assets used by the pages (currently `claude-color.svg`, `claude-highres.svg`).
+
+Files are standalone and reference external CDNs for Tailwind, Font Awesome and Google Fonts so there is no build step required.
 
 ## Quick preview (local)
 
-You can preview the site by opening `index.html` in your browser. For a more accurate local server environment (recommended), run a small static server from PowerShell:
+The fastest way to preview is to open `index.html` in your browser. For a local HTTP server (recommended for correct asset loading), run from PowerShell in this folder:
 
 ```powershell
 cd /d d:\VSCODE\htmlonlyport
-# Python 3 built-in HTTP server (available if Python is installed)
+# If you have Python 3 installed
 python -m http.server 8000
-# then open http://localhost:8000 in your browser
+# then open http://localhost:8000
 ```
 
-Or use the VS Code Live Server extension to preview and auto-refresh while editing.
+Or use VS Code Live Server extension to preview with auto-reload.
+
+## What to edit
+
+- Update text, links and contact info directly inside the HTML files (`index.html`, `projects.html`, `articles.html`, `blog.html`).
+- Replace images in `assets/` and update image src attributes.
+- Styles live in `styles.css` — small tweaks can be made there. `script.js` contains UI behavior (chat responses, navigation, animations).
+
+Tip: the site uses CDN-hosted Tailwind and Font Awesome, so editing markup to use Tailwind utility classes is supported without a build step.
 
 ## Deploy to GitHub Pages
 
-1. Create a GitHub repo and push this folder (or use your existing `portfolio` repo).
-2. In the repo on GitHub, go to Settings → Pages and set the Source to `main` branch and `/ (root)` folder, then Save.
-3. The site will publish shortly at `https://<USERNAME>.github.io/<REPO>/`.
+1. Push this repository to GitHub.
+2. In the repo settings → Pages, set Source to the `main` branch and folder `/ (root)`.
+3. After a few minutes your site will be available at `https://<USERNAME>.github.io/<REPO>/`.
 
-Notes:
+If you prefer a user site (example `https://<USERNAME>.github.io/`), name the repo `<USERNAME>.github.io` and push to `main`.
 
-- If you want the repo to serve at `https://<USERNAME>.github.io/` (user site), name the repo `<USERNAME>.github.io` and push to `main`.
-- `index.html` is served as the root document. To link directly to other pages use `projects.html` or `articles.html`.
+## Contact & license
 
-## Edit content
+Contact: sahabajalam@yahoo.com
 
-- Update personal details, social links and email inside `index.html`, `projects.html` and `articles.html`.
-- Replace images and text as needed. Most styles use Tailwind classes and some custom rules in `styles.css`.
-
-## License & contact
-
-This repo is free to reuse. Add a license file if you want a formal license (for example, `LICENSE` with MIT). For questions or help, contact: `sahabajalam@yahoo.com`.
+This repository currently does not include a license file. Add a `LICENSE` if you want to state reuse terms (MIT is common for portfolios).
 
 ---
 
-If you want, I can also:
-- Add a small GitHub Actions workflow to auto-deploy on push to `main`.
-- Create a `CNAME` file or add analytics/tracking snippets.
+If you'd like, I can also:
+- Add a simple GitHub Actions workflow to deploy to GitHub Pages.
+- Replace hardcoded demo text/images with a JSON-driven content file and a small build script.

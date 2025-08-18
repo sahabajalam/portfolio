@@ -710,6 +710,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // reveal small hero intro text if present
+    const heroIntro = document.querySelector('.hero-intro');
+    if (heroIntro) {
+        setTimeout(() => heroIntro.classList.add('intro-visible'), 300);
+    }
+
     console.log('Portfolio website initialized successfully!');
 });
 
