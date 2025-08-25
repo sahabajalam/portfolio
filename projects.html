@@ -15,6 +15,12 @@
     <!-- Favicon: use project logo from assets -->
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="assets/logo.svg">
+</head>
+
+<body>
+    <!-- Favicon: use project logo from assets -->
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="assets/logo.svg">
 
     <script>
         // Global functions for footer functionality
@@ -49,795 +55,688 @@
             }
         }
     </script>
-    </body>
 
-</html>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
+        }
 
-<style>
-    .gradient-bg {
-        background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
-    }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+        }
 
-    .hero-gradient {
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
-    }
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
 
-    .project-card {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        backdrop-filter: blur(10px);
-    }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
 
-    .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    }
+        .gradient-text {
+            /* use the portfolio's primary/secondary gradient defined in styles.css */
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .gradient-text {
-        /* use the portfolio's primary/secondary gradient defined in styles.css */
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
+        .tech-tag {
+            transition: all 0.2s ease;
+        }
 
-    .tech-tag {
-        transition: all 0.2s ease;
-    }
+        .tech-tag:hover {
+            transform: scale(1.05);
+        }
 
-    .tech-tag:hover {
-        transform: scale(1.05);
-    }
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
 
-    .filter-btn {
-        transition: all 0.3s ease;
-    }
+        .social-link--twitter {
+            background: #1a1a1a;
+        }
 
-    .social-link--twitter {
-        background: #1a1a1a;
-    }
+        .social-link--linkedin {
+            background: #0077b5;
+        }
 
-    .social-link--linkedin {
-        background: #0077b5;
-    }
+        .social-link--github {
+            background: #333;
+        }
 
-    .social-link--github {
-        background: #333;
-    }
+        .social-link--medium {
+            background: #000;
+        }
 
-    .social-link--medium {
-        background: #000;
-    }
+        .inspiration-section {
+            padding: 3rem 0 4rem;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .inspiration-section {
-        padding: 3rem 0 4rem;
-        background: white;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cards-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-    }
-
-    .card {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(16px);
-        border-radius: 1.5rem;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.3);
-    }
-
-    .follow-card {
-        padding: 2rem;
-        text-align: center;
-    }
-
-    .follow-title {
-        font-size: clamp(1.875rem, 5vw, 2.25rem);
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 1rem;
-    }
-
-    .follow-subtitle {
-        font-size: 1.25rem;
-        color: #4a4a4a;
-        margin-bottom: 2rem;
-    }
-
-    .social-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .social-link {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 1rem 2rem;
-        border-radius: 0.75rem;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        position: relative;
-        overflow: hidden;
-        color: white;
-        min-width: 140px;
-        justify-content: center;
-    }
-
-    .social-link:hover {
-        transform: translateY(-4px) scale(1.05);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .footer {
-        background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
-        color: white;
-        padding: 2rem 0;
-    }
-
-    .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .footer-brand {
-        grid-column: span 2;
-    }
-
-    .footer-logo {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .footer-logo-icon {
-        width: 2rem;
-        height: 2rem;
-        background: linear-gradient(135deg, #00b96b 0%, #0088cc 100%);
-        border-radius: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1rem;
-        font-weight: bold;
-    }
-
-    .footer-social {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .footer-social-link {
-        width: 2rem;
-        height: 2rem;
-        background: rgba(255, 255, 255, 0.06);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #e5e7eb;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        font-size: 0.875rem;
-    }
-
-    .footer-social-link:hover {
-        background: rgba(255, 255, 255, 0.12);
-        color: white;
-    }
-
-    .footer-section h3 {
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-        color: #ffffff;
-        font-size: 1rem;
-    }
-
-    .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .footer-links a {
-        color: #e5e7eb;
-        text-decoration: none;
-        transition: color 0.3s ease;
-        font-size: 0.875rem;
-    }
-
-    .footer-links a:hover {
-        color: #ffffff;
-    }
-
-    .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        padding-top: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-        text-align: center;
-    }
-
-    .footer-credit {
-        font-family: 'Playfair Display', serif;
-        font-size: 15px;
-        font-weight: 500;
-        letter-spacing: 0.3px;
-        color: #d1d5db;
-        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
-        margin: 0;
-        line-height: 1.4;
-    }
-
-    .footer-link {
-        color: inherit;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
-
-    .footer-bottom-links {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .back-to-top {
-        background: none;
-        border: none;
-        color: #e5e7eb;
-        cursor: pointer;
-        font-size: 0.875rem;
-        transition: color 0.3s ease;
-    }
-
-    .back-to-top:hover {
-        color: #ffffff;
-    }
-
-    @media (max-width: 640px) {
-        .social-links {
+        .cards-wrapper {
+            display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 3rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.3);
+        }
+
+        .follow-card {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .follow-title {
+            font-size: clamp(1.875rem, 5vw, 2.25rem);
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .follow-subtitle {
+            font-size: 1.25rem;
+            color: #4a4a4a;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .social-link {
-            width: 100%;
-            max-width: 280px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            color: white;
+            min-width: 140px;
+            justify-content: center;
+        }
+
+        .social-link:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .footer-brand {
-            grid-column: span 1;
+            grid-column: span 2;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-logo-icon {
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, #00b96b 0%, #0088cc 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-link {
+            width: 2rem;
+            height: 2rem;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-social-link:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+        }
+
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+            font-size: 1rem;
         }
 
         .footer-links {
-            flex-direction: column;
-            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1rem;
             align-items: center;
+            flex-wrap: wrap;
         }
-    }
 
-    /* Ensure nav buttons have intro-name styling */
-    .intro-name {
-        font-weight: 700 !important;
-        color: #1a1a1a !important;
-        background: linear-gradient(90deg, rgba(0, 185, 107, 0.09), rgba(37, 99, 235, 0.08)) !important;
-        padding: 6px 12px !important;
-        border-radius: 999px !important;
-        border: 1px solid rgba(0, 0, 0, 0.06) !important;
-        box-shadow: 0 10px 26px rgba(2, 6, 23, 0.06) !important;
-        text-decoration: none !important;
-        transition: all 0.3s ease !important;
-    }
+        .footer-links a {
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
 
-    .intro-name:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 15px 35px rgba(2, 6, 23, 0.1) !important;
-    }
-</style>
-</head>
+        .footer-links a:hover {
+            color: #ffffff;
+        }
 
-<body class="bg-gray-50 font-sans">
-    <!-- Hero Section with Integrated Navbar -->
-    <section class="hero-gradient py-4 relative overflow-hidden">
-        <div class="absolute inset-0 bg-white/20"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <!-- Header with Featured Projects Title -->
-            <div class="flex items-center justify-between mb-4 py-2">
-                <!-- Desktop Home Button (hidden on mobile) -->
-                <a href="index.html" class="btn-primary px-4 py-2 rounded-lg hidden md:flex">
-                    Home
-                </a>
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            text-align: center;
+        }
 
-                <!-- Mobile: Empty div for spacing -->
-                <div class="md:hidden"></div>
+        .footer-credit {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color: #d1d5db;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+            margin: 0;
+            line-height: 1.4;
+        }
 
-                <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                    Featured <span class="gradient-text">Projects</span>
-                </h1>
+        .footer-link {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
 
-                <!-- Desktop: Empty div for flex spacing -->
-                <div class="hidden md:block"></div>
+        .footer-bottom-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-                <!-- Mobile: Hamburger Menu Button -->
-                <button id="mobile-menu-toggle"
-                    class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
-                    <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
-                    <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
-                    <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
-                </button>
-            </div>
+        .back-to-top {
+            background: none;
+            border: none;
+            color: #e5e7eb;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
 
-            <!-- Mobile Menu (hidden by default) -->
-            <div id="mobile-menu"
-                class="hidden md:hidden bg-white/95 backdrop-blur-sm rounded-lg border border-gray-200 shadow-lg p-4 mb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="index.html" class="btn-primary px-4 py-2 rounded-lg text-center">
-                        Home
-                    </a>
-                    <div class="grid grid-cols-2 gap-2">
-                        <a href="#" class="intro-name text-center">Machine Learning</a>
-                        <a href="#" class="intro-name text-center">AI Research</a>
-                        <a href="#" class="intro-name text-center">Full Stack</a>
-                        <a href="#" class="intro-name text-center">Data Science</a>
+        .back-to-top:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 640px) {
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-link {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .footer-brand {
+                grid-column: span 1;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+        }
+
+        /* Ensure nav buttons have intro-name styling */
+        .intro-name {
+            font-weight: 700 !important;
+            color: #1a1a1a !important;
+            background: linear-gradient(90deg, rgba(0, 185, 107, 0.09), rgba(37, 99, 235, 0.08)) !important;
+            padding: 6px 12px !important;
+            border-radius: 999px !important;
+            border: 1px solid rgba(0, 0, 0, 0.06) !important;
+            box-shadow: 0 10px 26px rgba(2, 6, 23, 0.06) !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .intro-name:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 15px 35px rgba(2, 6, 23, 0.1) !important;
+        }
+    </style>
+    </head>
+
+    <body class="bg-gray-50 font-sans">
+        <!-- Hero Section with Integrated Navbar -->
+        <section class="hero-gradient py-4 relative overflow-hidden">
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);"></div>
+
+            <!-- Fixed Header -->
+            <div class="fixed top-0 left-0 right-0 z-50"
+                style="background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);">
+                <div class="container mx-auto px-6 relative z-10">
+                    <!-- Header with Featured Projects Title -->
+                    <div class="flex items-center justify-between mb-4 py-2">
+                        <!-- Desktop Home Button (hidden on mobile) -->
+                        <a href="index.html" class="btn-primary px-4 py-2 rounded-lg hidden md:flex">
+                            Home
+                        </a>
+
+                        <!-- Mobile: Empty div for spacing -->
+                        <div class="md:hidden"></div>
+
+                        <!-- Centered Title -->
+                        <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+                            Featured <span class="gradient-text">Projects</span>
+                        </h1>
+
+                        <!-- Desktop: Empty div for flex spacing -->
+                        <div class="hidden md:block"></div>
+
+                        <!-- Mobile: Hamburger Menu Button -->
+                        <button class="navbar-mobile-menu-toggle hamburger md:hidden">
+                            <span class="navbar-hamburger-line"></span>
+                            <span class="navbar-hamburger-line"></span>
+                            <span class="navbar-hamburger-line"></span>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu -->
+                    <div class="mobile-menu">
+                        <ul class="mobile-menu-links">
+                            <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+                            <li><a href="index.html#about" class="mobile-menu-link">About</a></li>
+                            <li><a href="projects.html" class="mobile-menu-link active">Projects</a></li>
+                            <li><a href="articles.html" class="mobile-menu-link">Articles</a></li>
+                            <li><a href="index.html#contact" class="mobile-menu-link">Contact</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Hero Content -->
-            <div class="text-center max-w-4xl mx-auto">
-                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
-                    Explore my collection of machine learning, AI, and data science projects that solve real-world
-                    problems.
-                </p>
-
-                <!-- Desktop Tag Buttons (hidden on mobile) -->
-                <div class="hidden md:flex items-center gap-4 md:gap-8 flex-wrap justify-center">
-                    <a href="#" class="intro-name">Machine Learning</a>
-                    <a href="#" class="intro-name">AI Research</a>
-                    <a href="#" class="intro-name">Full Stack</a>
-                    <a href="#" class="intro-name">Data Science</a>
+            <!-- Scrollable Content Area -->
+            <div class="pt-24 md:pt-20">
+                <div class="container mx-auto px-6 relative z-10">
+                    <!-- Hero Content -->
+                    <div class="text-center mx-auto">
+                        <p class="text-lg text-gray-200 leading-relaxed mx-auto mb-6">
+                            Explore my featured projects showcasing ML, AI, and data science solutions.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Grid -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Projects Grid -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Featured Project -->
-                <div class="lg:col-span-2 project-card bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-xl"
-                    data-category="ai-ml">
-                    <div class="relative h-64 bg-gradient-to-br from-purple-600/20 to-blue-600/20">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
-                            alt="AI project overview" loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
-                            class="absolute inset-0 w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <div class="absolute top-6 left-6">
-                            <span
-                                class="bg-green-400 text-green-900 px-3 py-1 rounded-full text-xs font-bold">FEATURED</span>
+                    <!-- Featured Project -->
+                    <div class="lg:col-span-2 project-card bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-xl"
+                        data-category="ai-ml">
+                        <div class="relative h-64 bg-gradient-to-br from-purple-600/20 to-blue-600/20">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
+                                alt="AI project overview" loading="lazy" decoding="async"
+                                onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
+                                class="absolute inset-0 w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-black/30"></div>
+                            <div class="absolute top-6 left-6">
+                                <span
+                                    class="bg-green-400 text-green-900 px-3 py-1 rounded-full text-xs font-bold">FEATURED</span>
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6">
+                                <h3 class="text-white font-bold text-2xl mb-2">AI-Powered Document Analysis System</h3>
+                                <p class="text-gray-300 text-sm">Advanced multi-modal AI system for intelligent document
+                                    processing, extraction, and analysis using transformers and OCR technology</p>
+                            </div>
                         </div>
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <h3 class="text-white font-bold text-2xl mb-2">AI-Powered Document Analysis System</h3>
-                            <p class="text-gray-300 text-sm">Advanced multi-modal AI system for intelligent document
-                                processing, extraction, and analysis using transformers and OCR technology</p>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Transformers</span>
+                                <span
+                                    class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">OCR</span>
+                                <span
+                                    class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">FastAPI</span>
+                                <span
+                                    class="tech-tag bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">React</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-3">
+                                    <button class="btn-primary py-3 px-4 rounded-lg font-semibold">
+                                        <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                                    </button>
+                                    <button class="btn-primary py-3 px-4 rounded-lg font-semibold">
+                                        <i class="fab fa-github mr-2"></i>View Code
+                                    </button>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-400 text-sm">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Transformers</span>
-                            <span
-                                class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">OCR</span>
-                            <span
-                                class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">FastAPI</span>
-                            <span
-                                class="tech-tag bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">React</span>
+
+                    <!-- Project Card 1 -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                        data-category="nlp">
+                        <div class="h-64 bg-gradient-to-br from-blue-500 to-indigo-600 relative">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=1200&q=80"
+                                alt="NLP project preview" loading="lazy" decoding="async"
+                                onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
+                                class="absolute inset-0 w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-black/30"></div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-white font-bold text-lg mb-1">Intelligent Chatbot</h3>
+                                <p class="text-blue-100 text-sm">GPT-powered conversational AI with context awareness
+                                </p>
+                            </div>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex gap-3">
-                                <button class="btn-primary py-3 px-4 rounded-lg font-semibold">
-                                    <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">GPT-4</span>
+                                <span
+                                    class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">LangChain</span>
+                                <span
+                                    class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Streamlit</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                    <i class="fas fa-external-link-alt mr-1"></i>Live Demo
                                 </button>
-                                <button class="btn-primary py-3 px-4 rounded-lg font-semibold">
-                                    <i class="fab fa-github mr-2"></i>View Code
+                                <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                    <i class="fab fa-github mr-1"></i>View Code
                                 </button>
                             </div>
-                            <div class="flex items-center gap-2 text-gray-400 text-sm">
-                                <i class="fas fa-star text-yellow-400"></i>
-                                <span>4.8</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                        data-category="computer-vision">
+                        <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 relative">
+                            <img src="https://images.unsplash.com/photo-1505765056114-1b36f3ef8c3b?auto=format&fit=crop&w=1200&q=80"
+                                alt="Computer vision preview" loading="lazy" decoding="async"
+                                onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
+                                class="absolute inset-0 w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-black/30"></div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-white font-bold text-lg mb-1">Object Detection System</h3>
+                                <p class="text-green-100 text-sm">Real-time object detection using YOLO and OpenCV</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">YOLO</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">OpenCV</span>
+                                <span
+                                    class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">PyTorch</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                    <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                                </button>
+                                <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                    <i class="fab fa-github mr-1"></i>View Code
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project Card 1 -->
-                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-                    data-category="nlp">
-                    <div class="h-64 bg-gradient-to-br from-blue-500 to-indigo-600 relative">
-                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=1200&q=80"
-                            alt="NLP project preview" loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
-                            class="absolute inset-0 w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-white font-bold text-lg mb-1">Intelligent Chatbot</h3>
-                            <p class="text-blue-100 text-sm">GPT-powered conversational AI with context awareness</p>
+                    <!-- Project Card 3 -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                        data-category="data-science">
+                        <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 relative">
+                            <img src="https://images.unsplash.com/photo-1526378725478-2f3f92d8d289?auto=format&fit=crop&w=1200&q=80"
+                                alt="Data science visualization" loading="lazy" decoding="async"
+                                onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
+                                class="absolute inset-0 w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-black/30"></div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-white font-bold text-lg mb-1">Climate Data Predictor</h3>
+                                <p class="text-purple-100 text-sm">ML model for environmental sustainability forecasting
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">XGBoost</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Pandas</span>
+                                <span
+                                    class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Plotly</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                    <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                                </button>
+                                <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                    <i class="fab fa-github mr-1"></i>View Code
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">GPT-4</span>
-                            <span
-                                class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">LangChain</span>
-                            <span
-                                class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Streamlit</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
-                            </button>
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fab fa-github mr-1"></i>View Code
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project Card 2 -->
-                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-                    data-category="computer-vision">
-                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 relative">
-                        <img src="https://images.unsplash.com/photo-1505765056114-1b36f3ef8c3b?auto=format&fit=crop&w=1200&q=80"
-                            alt="Computer vision preview" loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
-                            class="absolute inset-0 w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-white font-bold text-lg mb-1">Object Detection System</h3>
-                            <p class="text-green-100 text-sm">Real-time object detection using YOLO and OpenCV</p>
+                    <!-- Project Card 4 -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                        data-category="web-app">
+                        <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 relative">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+                                alt="Web app UI" loading="lazy" decoding="async"
+                                onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
+                                class="absolute inset-0 w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-black/30"></div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-white font-bold text-lg mb-1">Stock Price Analyzer</h3>
+                                <p class="text-red-100 text-sm">Real-time stock analysis with ML predictions</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Flask</span>
+                                <span class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">LSTM</span>
+                                <span
+                                    class="tech-tag bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Chart.js</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                    <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                                </button>
+                                <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
+                                    <i class="fab fa-github mr-1"></i>View Code
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">YOLO</span>
-                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">OpenCV</span>
-                            <span
-                                class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">PyTorch</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
-                            </button>
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fab fa-github mr-1"></i>View Code
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project Card 3 -->
-                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-                    data-category="data-science">
-                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 relative">
-                        <img src="https://images.unsplash.com/photo-1526378725478-2f3f92d8d289?auto=format&fit=crop&w=1200&q=80"
-                            alt="Data science visualization" loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
-                            class="absolute inset-0 w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-white font-bold text-lg mb-1">Climate Data Predictor</h3>
-                            <p class="text-purple-100 text-sm">ML model for environmental sustainability forecasting</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">XGBoost</span>
-                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Pandas</span>
-                            <span class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Plotly</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
-                            </button>
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fab fa-github mr-1"></i>View Code
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 4 -->
-                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-                    data-category="web-app">
-                    <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 relative">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
-                            alt="Web app UI" loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
-                            class="absolute inset-0 w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-white font-bold text-lg mb-1">Stock Price Analyzer</h3>
-                            <p class="text-red-100 text-sm">Real-time stock analysis with ML predictions</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Flask</span>
-                            <span class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">LSTM</span>
-                            <span
-                                class="tech-tag bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Chart.js</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
-                            </button>
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fab fa-github mr-1"></i>View Code
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 5 -->
-                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-                    data-category="ai-ml">
-                    <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 relative">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
-                            alt="AI model visualization" loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
-                            class="absolute inset-0 w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-white font-bold text-lg mb-1">Recommendation Engine</h3>
-                            <p class="text-cyan-100 text-sm">Collaborative filtering for personalized recommendations
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">TensorFlow</span>
-                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Keras</span>
-                            <span class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Docker</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
-                            </button>
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fab fa-github mr-1"></i>View Code
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 6 -->
-                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-                    data-category="nlp">
-                    <div class="h-48 bg-gradient-to-br from-emerald-500 to-green-600 relative">
-                        <img src="https://images.unsplash.com/photo-1526326762325-8c3a1f0a4b5b?auto=format&fit=crop&w=1200&q=80"
-                            alt="NLP dataset" loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
-                            class="absolute inset-0 w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-white font-bold text-lg mb-1">Sentiment Analyzer</h3>
-                            <p class="text-emerald-100 text-sm">Social media sentiment analysis with BERT</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">BERT</span>
-                            <span
-                                class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Transformers</span>
-                            <span
-                                class="tech-tag bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">FastAPI</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
-                            </button>
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fab fa-github mr-1"></i>View Code
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 7 -->
-                <div class="project-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-                    data-category="data-science">
-                    <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 relative">
-                        <img src="https://images.unsplash.com/photo-1508385082359-f1b8ff5a3d6f?auto=format&fit=crop&w=1200&q=80"
-                            alt="Data analysis" loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='assets/claude-highres.svg';"
-                            class="absolute inset-0 w-full h-full object-cover" />
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-white font-bold text-lg mb-1">Sales Forecasting Dashboard</h3>
-                            <p class="text-yellow-100 text-sm">Time series analysis for retail sales prediction</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Prophet</span>
-                            <span
-                                class="tech-tag bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Streamlit</span>
-                            <span class="tech-tag bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Plotly</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary project-demo py-2 px-4 rounded-lg font-semibold">
-                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
-                            </button>
-                            <button class="btn-primary project-demo py-2 px-3 rounded-lg font-semibold">
-                                <i class="fab fa-github mr-1"></i>View Code
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- View All Projects Button -->
-                <div class="col-span-full flex justify-center mt-8">
-                    <a href="https://github.com/sahabajalam" target="_blank" rel="noopener noreferrer"
-                        class="btn-primary hero-cta flex items-center gap-2">
-                        <i class="fab fa-github text-lg"></i>
-                        View All Projects on GitHub
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container mx-auto px-4">
-            <div class="footer-grid">
-                <!-- Brand -->
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <div class="footer-logo-icon">
-                            <i class="fas fa-code" aria-hidden="true"></i>
-                        </div>
-                        <span class="text-xl font-bold">Sahabaj Alam</span>
-                    </div>
-                    <div class="footer-social">
-                        <a href="https://github.com/sahabajalam" class="footer-social-link" aria-label="GitHub Profile"
-                            target="_blank">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/sahabajalam/" class="footer-social-link"
-                            aria-label="LinkedIn Profile" target="_blank">
-                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://x.com/sahabaj_alam" class="footer-social-link" aria-label="X Profile"
-                            target="_blank">
-                            <i class="fab fa-x-twitter" aria-hidden="true"></i>
-                        </a>
-                        <a href="mailto:sahabajalam@yahoo.com" class="footer-social-link" aria-label="Email Contact"
-                            target="_blank">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <!-- View All Projects Button -->
+                    <div class="col-span-full flex justify-center mt-8">
+                        <a href="https://github.com/sahabajalam" target="_blank" rel="noopener noreferrer"
+                            class="btn-primary hero-cta flex items-center gap-2">
+                            <i class="fab fa-github text-lg"></i>
+                            View All Projects on GitHub
                         </a>
                     </div>
-                </div>
 
-                <!-- Quick Links -->
-                <div class="footer-section ml-6 md:ml-8 lg:ml-12">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="articles.html">Articles</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
                 </div>
             </div>
+        </section>
 
-            <!-- Bottom Footer -->
-            <div class="footer-bottom">
-                <p class="footer-credit text-gray-400">
-                    © 2025 Sahabaj Alam. Proudly built with
-                    <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="footer-link">Claude</a>
-                    &
-                    <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer"
-                        class="footer-link">GitHub Copilot</a>
-                    <span aria-hidden="true"> ❤️</span>
-                </p>
-                <div class="footer-bottom-links">
-                    <button class="back-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
-                        Back to Top <i class="fas fa-arrow-up ml-1" aria-hidden="true"></i>
-                    </button>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container mx-auto px-4">
+                <div class="footer-grid">
+                    <!-- Brand -->
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="footer-logo-icon">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-xl font-bold">Sahabaj Alam</span>
+                        </div>
+                        <div class="footer-social">
+                            <a href="https://github.com/sahabajalam" class="footer-social-link"
+                                aria-label="GitHub Profile" target="_blank">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/sahabajalam/" class="footer-social-link"
+                                aria-label="LinkedIn Profile" target="_blank">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://x.com/sahabaj_alam" class="footer-social-link" aria-label="X Profile"
+                                target="_blank">
+                                <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:sahabajalam@yahoo.com" class="footer-social-link" aria-label="Email Contact"
+                                target="_blank">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-section ml-6 md:ml-8 lg:ml-12">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="articles.html">Articles</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bottom Footer -->
+                <div class="footer-bottom">
+                    <p class="footer-credit text-gray-400">
+                        © 2025 Sahabaj Alam. Proudly built with
+                        <a href="https://claude.ai" target="_blank" rel="noopener noreferrer"
+                            class="footer-link">Claude</a>
+                        &
+                        <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer"
+                            class="footer-link">GitHub Copilot</a>
+                        <span aria-hidden="true"> ❤️</span>
+                    </p>
+                    <div class="footer-bottom-links">
+                        <button class="back-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
+                            Back to Top <i class="fas fa-arrow-up ml-1" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script>
-        // Filter functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
+        <script>
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
 
-                const filter = button.getAttribute('data-filter');
+                    const filter = button.getAttribute('data-filter');
 
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                        card.style.animation = 'fadeIn 0.5s ease-in-out';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.5s ease-in-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
                 });
             });
-        });
 
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
+            // Mobile menu functionality (matching home page style)
+            document.addEventListener('DOMContentLoaded', function () {
+                const mobileMenuToggle = document.querySelector('.navbar-mobile-menu-toggle');
+                const mobileMenu = document.querySelector('.mobile-menu');
 
-            if (mobileMenuToggle && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('hidden');
+                if (mobileMenuToggle && mobileMenu) {
+                    mobileMenuToggle.addEventListener('click', function () {
+                        mobileMenu.classList.toggle('active');
+                        mobileMenuToggle.classList.toggle('active');
+                    });
+                }
+            });
 
-                    // Animate hamburger menu
-                    const spans = mobileMenuToggle.querySelectorAll('span');
-                    if (mobileMenu.classList.contains('hidden')) {
-                        spans[0].style.transform = 'rotate(0deg) translateY(0px)';
-                        spans[1].style.opacity = '1';
-                        spans[2].style.transform = 'rotate(0deg) translateY(0px)';
-                    } else {
-                        spans[0].style.transform = 'rotate(45deg) translateY(6px)';
-                        spans[1].style.opacity = '0';
-                        spans[2].style.transform = 'rotate(-45deg) translateY(-6px)';
-                    }
-                });
-            }
-        });
-
-        // Add CSS animation for fade in
-        const style = document.createElement('style');
-        style.textContent = `
+            // Add CSS animation for fade in
+            const style = document.createElement('style');
+            style.textContent = `
             @keyframes fadeIn {
                 from { opacity: 0; transform: translateY(20px); }
                 to { opacity: 1; transform: translateY(0); }
             }
         `;
-        document.head.appendChild(style);
-    </script>
+            document.head.appendChild(style);
+        </script>
+    </body>
+
+</html>
