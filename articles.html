@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 
     <script>
         tailwind.config = {
@@ -282,72 +283,95 @@
     </style>
 </head>
 
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 min-h-screen font-sans antialiased">
     <script>
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 
-    <!-- Hero Section with Integrated Navbar -->
-    <section class="hero-gradient py-4 relative overflow-hidden">
-        <div class="absolute inset-0 bg-white/20"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <!-- Header with Featured Articles Title -->
-            <div class="flex items-center justify-between mb-4 py-2">
-                <!-- Desktop Home Button (hidden on mobile) -->
-                <a href="index.html" class="btn-primary px-4 py-2 rounded-lg hidden md:flex">
-                    Home
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo Section -->
+            <a href="index.html" class="navbar-logo">
+                <div class="navbar-logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="navbar-logo-text">Sahabaj Alam</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="navbar-links">
+                <li class="navbar-link">
+                    <a href="index.html" class="navbar-link-anchor nav-link">Home</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="index.html#about" class="navbar-link-anchor nav-link">About</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="projects.html" class="navbar-link-anchor">Projects</a>
+                </li>
+                <li class="navbar-link active">
+                    <a href="articles.html" class="navbar-link-anchor">NoteonAI</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="index.html#contact" class="navbar-link-anchor nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="navbar-social">
+                <a href="https://github.com/sahabajalam" class="navbar-social-link" target="_blank"
+                    aria-label="View GitHub Profile">
+                    <i class="fab fa-github"></i>
                 </a>
+                <a href="https://www.linkedin.com/in/sahabajalam/" class="navbar-social-link" target="_blank"
+                    aria-label="Message on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/sahabaj_alam" class="navbar-social-link" target="_blank"
+                    aria-label="Message on X">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+            </div>
 
-                <!-- Mobile: Empty div for spacing -->
-                <div class="md:hidden"></div>
+            <!-- Call to Action Button -->
+            <a href="mailto:sahabajalam@yahoo.com" class="navbar-cta-button btn-primary navbar-cta-nav">
+                <i class="fas fa-envelope"></i>
+                <span>Let's Talk</span>
+            </a>
 
-                <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+            <!-- Mobile Menu Toggle (Hamburger) -->
+            <button class="navbar-mobile-menu-toggle hamburger">
+                <span class="navbar-hamburger-line"></span>
+                <span class="navbar-hamburger-line"></span>
+                <span class="navbar-hamburger-line"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-menu-links">
+                <li><a href="index.html" class="mobile-menu-link" data-section="home">Home</a></li>
+                <li><a href="index.html#about" class="mobile-menu-link" data-section="about">About</a></li>
+                <li><a href="projects.html" class="mobile-menu-link">Projects</a></li>
+                <li><a href="articles.html" class="mobile-menu-link active">NoteonAI</a></li>
+                <li><a href="index.html#contact" class="mobile-menu-link" data-section="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Page Header -->
+    <section class="bg-white relative overflow-hidden min-h-[50vh] pt-20 flex items-center">
+        <div class="absolute inset-0" style="background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center">
+                <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                     Note on <span class="gradient-text">Artificial Intelligence</span>
                 </h1>
-
-                <!-- Desktop: Empty div for flex spacing -->
-                <div class="hidden md:block"></div>
-
-                <!-- Mobile: Hamburger Menu Button -->
-                <button id="mobile-menu-toggle"
-                    class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
-                    <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
-                    <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
-                    <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
-                </button>
-            </div>
-
-            <!-- Mobile Menu (hidden by default) -->
-            <div id="mobile-menu"
-                class="hidden md:hidden bg-white/95 backdrop-blur-sm rounded-lg border border-gray-200 shadow-lg p-4 mb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="index.html" class="btn-primary px-4 py-2 rounded-lg text-center">
-                        Home
-                    </a>
-                    <div class="grid grid-cols-2 gap-2">
-                        <a href="#" class="intro-name text-center">Machine Learning</a>
-                        <a href="#" class="intro-name text-center">AI Research</a>
-                        <a href="#" class="intro-name text-center">Tutorials</a>
-                        <a href="#" class="intro-name text-center">Industry Insights</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hero Content -->
-            <div class="text-center max-w-4xl mx-auto">
-                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
-                    Deep insights into machine learning, AI research, and the technologies shaping tomorrow's world.
+                <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto">
+                    Deep insights into machine learning, AI research, and the technologies shaping tomorrow's world
                 </p>
-
-                <!-- Desktop Tag Buttons (hidden on mobile) -->
-                <div class="hidden md:flex items-center gap-4 md:gap-8 flex-wrap justify-center">
-                    <a href="#" class="intro-name">Machine Learning</a>
-                    <a href="#" class="intro-name">AI Research</a>
-                    <a href="#" class="intro-name">Tutorials</a>
-                    <a href="#" class="intro-name">Industry Insights</a>
-                </div>
             </div>
         </div>
     </section>
@@ -409,13 +433,9 @@
     <!-- Latest Posts Grid -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
-            <div class="flex items-center justify-between mb-12">
-                <div class="flex items-center gap-3">
-                    <div class="w-1 h-8 bg-gradient-to-b from-primary-600 to-secondary-600 rounded-full"></div>
-                    <h2 class="text-2xl font-bold text-gray-900">Latest Posts</h2>
-                </div>
-                <a href="#" class="text-primary-600 hover:text-primary-700 font-semibold transition-colors">View All
-                    →</a>
+            <div class="flex items-center gap-3 mb-12">
+                <div class="w-1 h-8 bg-gradient-to-b from-primary-600 to-secondary-600 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-gray-900">Latest Posts</h2>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -513,63 +533,106 @@
                         </div>
                     </div>
                 </article>
+
+                <!-- Post 4 -->
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&q=80"
+                        alt="Article" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-semibold">Breakthrough</span>
+                            <span class="text-gray-400 text-xs">Nov 20, 2024</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-3 leading-tight">
+                            GPT-4 Vision: Revolutionizing Computer Vision
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                            How multimodal AI models are transforming image understanding and visual reasoning tasks.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">10 min read</span>
+                            <div class="flex gap-2">
+                                <button class="text-gray-400 hover:text-red-500 transition-colors">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="text-gray-400 hover:text-blue-500 transition-colors">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80"
+                        alt="Article" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-semibold">Deep
+                                Dive</span>
+                            <span class="text-gray-400 text-xs">Nov 15, 2024</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-3 leading-tight">
+                            Neural Networks: From Perceptrons to Transformers
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                            A comprehensive journey through the evolution of neural network architectures and their
+                            impact.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">18 min read</span>
+                            <div class="flex gap-2">
+                                <button class="text-gray-400 hover:text-red-500 transition-colors">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="text-gray-400 hover:text-blue-500 transition-colors">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80"
+                        alt="Article" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-semibold">Research</span>
+                            <span class="text-gray-400 text-xs">Nov 8, 2024</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-3 leading-tight">
+                            Quantum Computing Meets Machine Learning
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                            Exploring the intersection of quantum computing and AI for next-generation algorithms.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">12 min read</span>
+                            <div class="flex gap-2">
+                                <button class="text-gray-400 hover:text-red-500 transition-colors">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="text-gray-400 hover:text-blue-500 transition-colors">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
 
-    <!-- Categories Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Explore by Category</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Discover articles organized by topics that matter most in the AI and machine learning space.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- View All Button -->
+            <div class="text-center mt-12">
                 <a href="#"
-                    class="group bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-2xl hover:from-blue-100 hover:to-blue-200 transition-all duration-300">
-                    <div
-                        class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-brain text-white text-xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-lg mb-2">Machine Learning</h3>
-                    <p class="text-gray-600 text-sm mb-3">Deep learning, algorithms, and model optimization</p>
-                    <span class="text-blue-600 text-sm font-semibold">12 articles →</span>
-                </a>
-
-                <a href="#"
-                    class="group bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-2xl hover:from-green-100 hover:to-green-200 transition-all duration-300">
-                    <div
-                        class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-robot text-white text-xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-lg mb-2">AI Research</h3>
-                    <p class="text-gray-600 text-sm mb-3">Latest breakthroughs and research findings</p>
-                    <span class="text-green-600 text-sm font-semibold">8 articles →</span>
-                </a>
-
-                <a href="#"
-                    class="group bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-2xl hover:from-purple-100 hover:to-purple-200 transition-all duration-300">
-                    <div
-                        class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-code text-white text-xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-lg mb-2">Tutorials</h3>
-                    <p class="text-gray-600 text-sm mb-3">Hands-on guides and implementation tutorials</p>
-                    <span class="text-purple-600 text-sm font-semibold">15 articles →</span>
-                </a>
-
-                <a href="#"
-                    class="group bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-2xl hover:from-orange-100 hover:to-orange-200 transition-all duration-300">
-                    <div
-                        class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-chart-line text-white text-xl"></i>
-                    </div>
-                    <h3 class="font-semibold text-lg mb-2">Industry Insights</h3>
-                    <p class="text-gray-600 text-sm mb-3">Trends, analysis, and market perspectives</p>
-                    <span class="text-orange-600 text-sm font-semibold">6 articles →</span>
+                    class="btn-primary inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold transition-all hover:transform hover:scale-105">
+                    <i class="fas fa-list-ul"></i>
+                    View All Articles
                 </a>
             </div>
         </div>
@@ -639,34 +702,57 @@
         </div>
     </footer>
 
+    <!-- JavaScript -->
+    <script src="script.js"></script>
     <script>
         // Global function for footer functionality
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Mobile menu functionality
+        // Mobile menu functionality - matching projects page implementation
         document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuToggle = document.querySelector('.navbar-mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navbar = document.querySelector('.navbar');
 
             if (mobileMenuToggle && mobileMenu) {
                 mobileMenuToggle.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
 
-                    // Animate hamburger menu
-                    const spans = mobileMenuToggle.querySelectorAll('span');
-                    if (mobileMenu.classList.contains('hidden')) {
-                        spans[0].style.transform = 'rotate(0deg) translateY(0px)';
-                        spans[1].style.opacity = '1';
-                        spans[2].style.transform = 'rotate(0deg) translateY(0px)';
-                    } else {
-                        spans[0].style.transform = 'rotate(45deg) translateY(6px)';
-                        spans[1].style.opacity = '0';
-                        spans[2].style.transform = 'rotate(-45deg) translateY(-6px)';
+                // Close mobile menu when clicking on links
+                const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function (event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
                     }
                 });
             }
+
+            // Add scrolled class to navbar on scroll
+            let scrolled = false;
+            window.addEventListener('scroll', function () {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > 20 && !scrolled) {
+                    navbar.classList.add('scrolled');
+                    scrolled = true;
+                } else if (scrollTop <= 20 && scrolled) {
+                    navbar.classList.remove('scrolled');
+                    scrolled = false;
+                }
+            });
         });
     </script>
 </body>
