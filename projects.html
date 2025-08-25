@@ -311,6 +311,19 @@
             text-align: center;
         }
 
+        /* Ensure footer bottom items align horizontally on larger screens */
+        @media (min-width: 1024px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .footer-bottom .footer-credit {
+                margin-right: 1rem;
+            }
+        }
+
         .footer-credit {
             font-family: 'Playfair Display', serif;
             font-size: 15px;
