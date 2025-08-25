@@ -289,40 +289,65 @@
         }
     </script>
 
-    <!-- Header -->
-    <header class="gradient-bg sticky top-0 z-50 border-b border-gray-200/50 backdrop-blur-lg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="btn-primary px-4 py-2 rounded-lg">
+    <!-- Hero Section with Integrated Navbar -->
+    <section class="hero-gradient py-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-white/20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Header with Featured Articles Title -->
+            <div class="flex items-center justify-between mb-4 py-2">
+                <!-- Desktop Home Button (hidden on mobile) -->
+                <a href="index.html" class="btn-primary px-4 py-2 rounded-lg hidden md:flex">
                     Home
                 </a>
 
-                <div class="flex items-center gap-4 md:gap-8 flex-wrap justify-center">
+                <!-- Mobile: Empty div for spacing -->
+                <div class="md:hidden"></div>
+
+                <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                    Exploring the Future of <span class="gradient-text">Artificial Intelligence</span>
+                </h1>
+
+                <!-- Desktop: Empty div for flex spacing -->
+                <div class="hidden md:block"></div>
+
+                <!-- Mobile: Hamburger Menu Button -->
+                <button id="mobile-menu-toggle"
+                    class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+                    <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu (hidden by default) -->
+            <div id="mobile-menu"
+                class="hidden md:hidden bg-white/95 backdrop-blur-sm rounded-lg border border-gray-200 shadow-lg p-4 mb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="btn-primary px-4 py-2 rounded-lg text-center">
+                        Home
+                    </a>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="#" class="intro-name text-center">Machine Learning</a>
+                        <a href="#" class="intro-name text-center">AI Research</a>
+                        <a href="#" class="intro-name text-center">Tutorials</a>
+                        <a href="#" class="intro-name text-center">Industry Insights</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="text-center max-w-4xl mx-auto">
+                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+                    Deep insights into machine learning, AI research, and the technologies shaping tomorrow's world.
+                </p>
+
+                <!-- Desktop Tag Buttons (hidden on mobile) -->
+                <div class="hidden md:flex items-center gap-4 md:gap-8 flex-wrap justify-center">
                     <a href="#" class="intro-name">Machine Learning</a>
                     <a href="#" class="intro-name">AI Research</a>
                     <a href="#" class="intro-name">Tutorials</a>
                     <a href="#" class="intro-name">Industry Insights</a>
                 </div>
-
-                <div
-                    class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-newspaper text-white"></i>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-gradient py-2 relative overflow-hidden">
-        <div class="absolute inset-0 bg-white/20"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center max-w-4xl mx-auto">
-                <h1 class="font-serif text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                    Exploring the Future of <span class="gradient-text">Artificial Intelligence</span>
-                </h1>
-                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                    Deep insights into machine learning, AI research, and the technologies shaping tomorrow's world.
-                </p>
             </div>
         </div>
     </section>
@@ -613,6 +638,37 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Global function for footer functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+
+                    // Animate hamburger menu
+                    const spans = mobileMenuToggle.querySelectorAll('span');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        spans[0].style.transform = 'rotate(0deg) translateY(0px)';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'rotate(0deg) translateY(0px)';
+                    } else {
+                        spans[0].style.transform = 'rotate(45deg) translateY(6px)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'rotate(-45deg) translateY(-6px)';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
