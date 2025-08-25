@@ -57,6 +57,29 @@
     </script>
 
     <style>
+        /* Additional responsive utilities */
+        .hidden {
+            display: none;
+        }
+
+        .md\:flex {
+            @media (min-width: 768px) {
+                display: flex;
+            }
+        }
+
+        .lg\:flex {
+            @media (min-width: 1024px) {
+                display: flex;
+            }
+        }
+
+        .md\:hidden {
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+
         .gradient-bg {
             background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
         }
@@ -362,6 +385,122 @@
             transform: translateY(-2px) !important;
             box-shadow: 0 15px 35px rgba(2, 6, 23, 0.1) !important;
         }
+
+        /* Optimized navbar spacing for projects page */
+        .navbar {
+            height: clamp(64px, 8vh, 80px);
+            padding: 0;
+        }
+
+        .navbar-container {
+            height: 100%;
+            padding: 0 1.5rem;
+            gap: 1rem;
+        }
+
+        .navbar-logo {
+            padding: 0.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-logo:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar-links {
+            gap: 0.5rem;
+        }
+
+        .navbar-link-anchor {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-link.active .navbar-link-anchor {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .navbar-social {
+            gap: 0.25rem;
+        }
+
+        .navbar-social-link {
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-cta-button {
+            padding: 0.625rem 1.25rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 10px;
+            gap: 0.5rem;
+        }
+
+        /* Mobile menu optimizations */
+        .mobile-menu {
+            top: clamp(64px, 8vh, 80px);
+            height: calc(100vh - clamp(64px, 8vh, 80px));
+            padding-top: 1rem;
+        }
+
+        .mobile-menu-links {
+            padding: 1.5rem;
+            gap: 0.75rem;
+        }
+
+        .mobile-menu-link {
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Page content spacing */
+        .hero-gradient {
+            padding-top: clamp(64px, 8vh, 80px);
+        }
+
+        /* Responsive optimizations */
+        @media (max-width: 768px) {
+            .navbar-container {
+                padding: 0 1rem;
+            }
+
+            .navbar-logo {
+                padding: 0.25rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .navbar-container {
+                padding: 0 2rem;
+                gap: 1.5rem;
+            }
+
+            .navbar-links {
+                gap: 1rem;
+            }
+
+            .navbar-social {
+                gap: 0.5rem;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .navbar-container {
+                padding: 0 2.5rem;
+                gap: 2rem;
+            }
+        }
     </style>
     </head>
 
@@ -370,56 +509,88 @@
         <section class="hero-gradient py-4 relative overflow-hidden">
             <div class="absolute inset-0" style="background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);"></div>
 
-            <!-- Fixed Header -->
-            <div class="fixed top-0 left-0 right-0 z-50"
-                style="background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);">
-                <div class="container mx-auto px-6 relative z-10">
-                    <!-- Header with Featured Projects Title -->
-                    <div class="flex items-center justify-between mb-4 py-2">
-                        <!-- Desktop Home Button (hidden on mobile) -->
-                        <a href="index.html" class="btn-primary px-4 py-2 rounded-lg hidden md:flex">
-                            Home
+            <!-- Fixed Header Navigation -->
+            <nav class="fixed top-0 left-0 right-0 z-50 navbar">
+                <div class="navbar-container">
+                    <!-- Logo Section -->
+                    <a href="index.html" class="navbar-logo">
+                        <div class="navbar-logo-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <span class="navbar-logo-text">Sahabaj Alam</span>
+                    </a>
+
+                    <!-- Desktop Navigation Links -->
+                    <ul class="navbar-links hidden md:flex">
+                        <li class="navbar-link">
+                            <a href="index.html" class="navbar-link-anchor">Home</a>
+                        </li>
+                        <li class="navbar-link">
+                            <a href="index.html#about" class="navbar-link-anchor">About</a>
+                        </li>
+                        <li class="navbar-link active">
+                            <a href="projects.html" class="navbar-link-anchor">Projects</a>
+                        </li>
+                        <li class="navbar-link">
+                            <a href="articles.html" class="navbar-link-anchor">Articles</a>
+                        </li>
+                        <li class="navbar-link">
+                            <a href="index.html#contact" class="navbar-link-anchor">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Desktop Social Links -->
+                    <div class="navbar-social hidden lg:flex">
+                        <a href="https://github.com/sahabajalam" class="navbar-social-link" target="_blank"
+                            aria-label="View GitHub Profile">
+                            <i class="fab fa-github"></i>
                         </a>
+                        <a href="https://www.linkedin.com/in/sahabajalam/" class="navbar-social-link" target="_blank"
+                            aria-label="Message on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://x.com/sahabaj_alam" class="navbar-social-link" target="_blank"
+                            aria-label="Message on X">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
 
-                        <!-- Mobile: Empty div for spacing -->
-                        <div class="md:hidden"></div>
+                    <!-- Call to Action Button -->
+                    <a href="mailto:sahabajalam@yahoo.com" class="navbar-cta-button btn-primary hidden lg:flex">
+                        <i class="fas fa-envelope"></i>
+                        <span>Let's Talk</span>
+                    </a>
 
-                        <!-- Centered Title -->
-                        <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+                    <!-- Mobile Menu Toggle -->
+                    <button class="navbar-mobile-menu-toggle md:hidden">
+                        <span class="navbar-hamburger-line"></span>
+                        <span class="navbar-hamburger-line"></span>
+                        <span class="navbar-hamburger-line"></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div class="mobile-menu">
+                    <ul class="mobile-menu-links">
+                        <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+                        <li><a href="index.html#about" class="mobile-menu-link">About</a></li>
+                        <li><a href="projects.html" class="mobile-menu-link active">Projects</a></li>
+                        <li><a href="articles.html" class="mobile-menu-link">Articles</a></li>
+                        <li><a href="index.html#contact" class="mobile-menu-link">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Page Header Section -->
+            <div class="pt-20 pb-8">
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="text-center">
+                        <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                             Featured <span class="gradient-text">Projects</span>
                         </h1>
-
-                        <!-- Desktop: Empty div for flex spacing -->
-                        <div class="hidden md:block"></div>
-
-                        <!-- Mobile: Hamburger Menu Button -->
-                        <button class="navbar-mobile-menu-toggle hamburger md:hidden">
-                            <span class="navbar-hamburger-line"></span>
-                            <span class="navbar-hamburger-line"></span>
-                            <span class="navbar-hamburger-line"></span>
-                        </button>
-                    </div>
-
-                    <!-- Mobile Menu -->
-                    <div class="mobile-menu">
-                        <ul class="mobile-menu-links">
-                            <li><a href="index.html" class="mobile-menu-link">Home</a></li>
-                            <li><a href="index.html#about" class="mobile-menu-link">About</a></li>
-                            <li><a href="projects.html" class="mobile-menu-link active">Projects</a></li>
-                            <li><a href="articles.html" class="mobile-menu-link">Articles</a></li>
-                            <li><a href="index.html#contact" class="mobile-menu-link">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scrollable Content Area -->
-            <div class="pt-24 md:pt-20">
-                <div class="container mx-auto px-6 relative z-10">
-                    <!-- Hero Content -->
-                    <div class="text-center mx-auto">
-                        <p class="text-lg text-gray-200 leading-relaxed mx-auto mb-6">
-                            Explore my featured projects showcasing ML, AI, and data science solutions.
+                        <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto">
+                            Explore my portfolio of innovative AI/ML solutions, web applications, and data science
+                            projects
                         </p>
                     </div>
                 </div>
@@ -714,17 +885,49 @@
                 });
             });
 
-            // Mobile menu functionality (matching home page style)
+            // Mobile menu functionality
             document.addEventListener('DOMContentLoaded', function () {
                 const mobileMenuToggle = document.querySelector('.navbar-mobile-menu-toggle');
                 const mobileMenu = document.querySelector('.mobile-menu');
+                const navbar = document.querySelector('.navbar');
 
                 if (mobileMenuToggle && mobileMenu) {
                     mobileMenuToggle.addEventListener('click', function () {
                         mobileMenu.classList.toggle('active');
                         mobileMenuToggle.classList.toggle('active');
                     });
+
+                    // Close mobile menu when clicking on links
+                    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+                    mobileMenuLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.remove('active');
+                            mobileMenuToggle.classList.remove('active');
+                        });
+                    });
+
+                    // Close mobile menu when clicking outside
+                    document.addEventListener('click', function (event) {
+                        if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+                            mobileMenu.classList.remove('active');
+                            mobileMenuToggle.classList.remove('active');
+                        }
+                    });
                 }
+
+                // Add scrolled class to navbar on scroll
+                let scrolled = false;
+                window.addEventListener('scroll', function () {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                    if (scrollTop > 20 && !scrolled) {
+                        navbar.classList.add('scrolled');
+                        scrolled = true;
+                    } else if (scrollTop <= 20 && scrolled) {
+                        navbar.classList.remove('scrolled');
+                        scrolled = false;
+                    }
+                });
             });
 
             // Add CSS animation for fade in
