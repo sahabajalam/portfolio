@@ -1098,7 +1098,7 @@ html {
     z-index: calc(var(--z-max) - 2);
 }
 
-.mobile-menu.active ~ .mobile-menu-overlay,
+.mobile-menu.active~.mobile-menu-overlay,
 .mobile-menu-overlay.active {
     opacity: 1;
     visibility: visible;

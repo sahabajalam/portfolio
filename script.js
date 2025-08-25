@@ -135,12 +135,12 @@ class NavigationManager {
 
         let ticking = false;
         let scrolled = false;
-        
+
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 requestAnimationFrame(() => {
                     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    
+
                     if (scrollTop > 20 && !scrolled) {
                         navbar.classList.add('scrolled');
                         scrolled = true;
