@@ -7,8 +7,7 @@
     <title>Articles - Sahabaj Alam</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
@@ -29,10 +28,6 @@
                             600: '#2563eb',
                             700: '#1d4ed8'
                         }
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'serif': ['Playfair Display', 'Georgia', 'serif']
                     }
                 }
             }
@@ -44,12 +39,53 @@
     <link rel="shortcut icon" href="assets/logo.svg">
 
     <style>
+        /* Additional responsive utilities */
+        .hidden {
+            display: none;
+        }
+
+        .md\:flex {
+            @media (min-width: 768px) {
+                display: flex;
+            }
+        }
+
+        .lg\:flex {
+            @media (min-width: 1024px) {
+                display: flex;
+            }
+        }
+
+        .md\:hidden {
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+
         .gradient-bg {
             background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
         }
 
         .hero-gradient {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+        }
+
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .gradient-text {
+            /* use the portfolio's primary/secondary gradient defined in styles.css */
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .article-card {
@@ -69,13 +105,6 @@
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #16a34a, #2563eb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .category-tag {
@@ -203,8 +232,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 1.5rem;
             display: flex;
-            flex-direction: row;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             gap: 0.75rem;
             text-align: center;
