@@ -738,50 +738,11 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Mobile menu functionality - matching projects page implementation
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuToggle = document.querySelector('.navbar-mobile-menu-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const navbar = document.querySelector('.navbar');
-
-            if (mobileMenuToggle && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('active');
-                    mobileMenuToggle.classList.toggle('active');
-                });
-
-                // Close mobile menu when clicking on links
-                const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-                mobileMenuLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.remove('active');
-                        mobileMenuToggle.classList.remove('active');
-                    });
-                });
-
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function (event) {
-                    if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
-                        mobileMenu.classList.remove('active');
-                        mobileMenuToggle.classList.remove('active');
-                    }
-                });
-            }
-
-            // Add scrolled class to navbar on scroll
-            let scrolled = false;
-            window.addEventListener('scroll', function () {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                if (scrollTop > 20 && !scrolled) {
-                    navbar.classList.add('scrolled');
-                    scrolled = true;
-                } else if (scrollTop <= 20 && scrolled) {
-                    navbar.classList.remove('scrolled');
-                    scrolled = false;
-                }
-            });
-        });
+        // Use main script.js for mobile menu functionality
+        // Global function for footer functionality remains here
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 </body>
 

@@ -12,15 +12,44 @@ class NavigationManager {
     }
 
     setupMobileMenu() {
-        const hamburger = document.querySelector('.hamburger');
+        const hamburger = document.querySelector('.navbar-mobile-menu-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
 
         if (hamburger && mobileMenu) {
-            hamburger.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
-                hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active'));
+            // Function to toggle mobile menu
+            const toggleMobileMenu = () => {
+                const isActive = mobileMenu.classList.contains('active');
+                if (isActive) {
+                    mobileMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                } else {
+                    mobileMenu.classList.add('active');
+                    hamburger.classList.add('active');
+                    hamburger.setAttribute('aria-expanded', 'true');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+
+            // Add both click and touch events for better mobile support
+            hamburger.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMobileMenu();
             });
+
+            // Touch handling for mobile devices
+            hamburger.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            }, { passive: false });
+
+            hamburger.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMobileMenu();
+            }, { passive: false });
 
             // Close mobile menu when clicking outside
             document.addEventListener('click', (e) => {
@@ -28,6 +57,17 @@ class NavigationManager {
                     mobileMenu.classList.remove('active');
                     hamburger.classList.remove('active');
                     hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close mobile menu when touching outside
+            document.addEventListener('touchstart', (e) => {
+                if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
                 }
             });
 
@@ -38,6 +78,14 @@ class NavigationManager {
                     mobileMenu.classList.remove('active');
                     hamburger.classList.remove('active');
                     hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+
+                link.addEventListener('touchend', () => {
+                    mobileMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
                 });
             });
         }
@@ -86,13 +134,19 @@ class NavigationManager {
         if (!navbar) return;
 
         let ticking = false;
+        let scrolled = false;
+        
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 requestAnimationFrame(() => {
-                    if (window.scrollY > 2) {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (scrollTop > 20 && !scrolled) {
                         navbar.classList.add('scrolled');
-                    } else {
+                        scrolled = true;
+                    } else if (scrollTop <= 20 && scrolled) {
                         navbar.classList.remove('scrolled');
+                        scrolled = false;
                     }
                     ticking = false;
                 });
