@@ -2312,6 +2312,10 @@ html {
         gap: 0.5rem;
         align-items: center;
     }
+
+    .footer-section h3 {
+        text-align: center;
+    }
 }
 
 .footer-links a {
